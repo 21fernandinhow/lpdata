@@ -1,3 +1,3 @@
-# MongoDB para documentos de conteúdo
+# PostgreSQL com JSONB para conteúdo
 
-O MVP usará Rails com MongoDB para persistir landing pages e seus documentos de conteúdo. MongoDB preserva o caráter livre e variável do JSON sem impor uma estrutura de conteúdo comum; o frontend consumidor continua responsável por interpretar o documento.
+O MVP usará Rails com PostgreSQL. Os dados estruturados da aplicação serão relacionais, enquanto o `current_data` de cada landing page será persistido em uma coluna JSONB; isso preserva a flexibilidade necessária para o conteúdo arbitrário sem separar o produto em dois bancos de dados. O JSON não tem schema de apresentação imposto pelo backend: objetos e arrays são estruturais, e um objeto com `value` e `type` é um Campo Editável para o dashboard.

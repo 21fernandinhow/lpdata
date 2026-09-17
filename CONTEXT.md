@@ -1,6 +1,6 @@
 # LPData
 
-LPData é a infraestrutura que separa a estrutura de uma landing page do conteúdo que ela exibe. O contexto existe para que conteúdo seja alterado sem modificar ou redistribuir o código consumidor.
+LPData é a infraestrutura que separa a estrutura de uma landing page do conteúdo e dos assets que ela exibe. O contexto existe para que esses elementos sejam alterados sem modificar ou redistribuir o código consumidor.
 
 ## Linguagem
 
@@ -13,8 +13,24 @@ Recurso pertencente a um usuário que representa uma página cujo conteúdo é g
 _Evite_: Site, projeto, página estática
 
 **Documento de Conteúdo**:
-Valor JSON livre associado a uma landing page; a sua estrutura e interpretação são definidas pela aplicação consumidora.
-_Evite_: Schema de página, template, código da página
+Documento JSONB atual (`current_data`) associado a uma landing page. A aplicação consumidora define sua estrutura e interpretação, e o documento inteiro é a unidade de atualização.
+_Evite_: Schema de página, template, código da página, campo individual
+
+**Campo Editável**:
+Objeto do Documento de Conteúdo que possui `value` e `type`. O tipo define o editor que o dashboard oferece para seu valor.
+_Evite_: Objeto estrutural, campo de banco
+
+**Configuração de Dashboard**:
+Metadado opcional (`dashboard_config`) de um Campo Editável que ajusta seu comportamento no dashboard.
+_Evite_: Schema obrigatório, metadata genérica
+
+**Asset**:
+Arquivo pertencente a um usuário e hospedado pelo LPData para ser referenciado por documentos de conteúdo, como uma imagem raster ou um arquivo vetorial. Um mesmo asset pode ser reutilizado por várias landing pages do proprietário.
+_Evite_: Arquivo estático do código, imagem convertida, arquivo da landing page
+
+**Referência Externa**:
+URL em um documento de conteúdo que aponta para um arquivo hospedado fora do LPData. Ela pode ser usada no lugar de um Asset.
+_Evite_: Asset hospedado, upload obrigatório
 
 **Aplicação Consumidora**:
 Frontend independente que consulta um documento de conteúdo e o transforma na apresentação de uma landing page.
