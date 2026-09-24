@@ -7,7 +7,12 @@ Rails.application.routes.draw do
   post "api/v1/auth/refresh", to: "api/v1/auth/tokens#refresh"
   get "api/v1/auth/me", to: "api/v1/auth/users#show"
 
-  get "api/v1/landing_pages/:public_identifier", to: "api/v1/landing_pages#show"
+  post "api/v1/landing_pages", to: "api/v1/landing_pages#create"
+  get "api/v1/manage/landing_pages", to: "api/v1/landing_pages#index"
+  get "api/v1/manage/landing_pages/:id", to: "api/v1/landing_pages#manage_show"
+  patch "api/v1/manage/landing_pages/:id", to: "api/v1/landing_pages#update"
+  delete "api/v1/manage/landing_pages/:id", to: "api/v1/landing_pages#destroy"
+  get "api/v1/landing_pages/:public_id", to: "api/v1/landing_pages#show"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

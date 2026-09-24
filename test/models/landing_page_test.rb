@@ -1,22 +1,26 @@
 require "test_helper"
 
 class LandingPageTest < ActiveSupport::TestCase
+  setup do
+    @user = User.create!(email: "owner@example.com", password: "password123")
+  end
+
   test "accepts an empty JSON object as a content document" do
-    landing_page = LandingPage.new(public_identifier: "empty-object", current_data: {})
+    landing_page = @user.landing_pages.new(name: "Empty object", current_data: {})
 
     assert landing_page.valid?
   end
 
   test "requires a content document" do
-    landing_page = LandingPage.new(public_identifier: "missing-content", current_data: nil)
+    landing_page = @user.landing_pages.new(name: "Missing content", current_data: nil)
 
     assert_not landing_page.valid?
     assert_includes landing_page.errors[:current_data], "can't be blank"
   end
 
   test "accepts nested editable fields using the value and type convention" do
-    landing_page = LandingPage.new(
-      public_identifier: "editable-content",
+    landing_page = @user.landing_pages.new(
+      name: "Editable content",
       current_data: {
         "section" => {
           "title" => { "value" => "Launch day", "type" => "string" },
@@ -29,8 +33,8 @@ class LandingPageTest < ActiveSupport::TestCase
   end
 
   test "rejects primitive values outside editable fields" do
-    landing_page = LandingPage.new(
-      public_identifier: "loose-value",
+    landing_page = @user.landing_pages.new(
+      name: "Loose value",
       current_data: { "title" => "Launch day" }
     )
 
@@ -39,8 +43,8 @@ class LandingPageTest < ActiveSupport::TestCase
   end
 
   test "rejects editable fields with only one convention key" do
-    landing_page = LandingPage.new(
-      public_identifier: "incomplete-field",
+    landing_page = @user.landing_pages.new(
+      name: "Incomplete field",
       current_data: { "title" => { "value" => "Launch day" } }
     )
 
@@ -49,8 +53,8 @@ class LandingPageTest < ActiveSupport::TestCase
   end
 
   test "rejects a value that does not match its editable field type" do
-    landing_page = LandingPage.new(
-      public_identifier: "wrong-value-type",
+    landing_page = @user.landing_pages.new(
+      name: "Wrong value type",
       current_data: { "title" => { "value" => true, "type" => "string" } }
     )
 

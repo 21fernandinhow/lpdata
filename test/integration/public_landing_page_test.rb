@@ -1,9 +1,13 @@
 require "test_helper"
 
 class PublicLandingPageTest < ActionDispatch::IntegrationTest
-  test "consumer reads a landing page content by its public identifier" do
-    landing_page = LandingPage.create!(
-      public_identifier: "launch-page",
+  setup do
+    @user = User.create!(email: "owner@example.com", password: "password123")
+  end
+
+  test "consumer reads a landing page content by its public id" do
+    landing_page = @user.landing_pages.create!(
+      name: "Launch page",
       current_data: {
         "hero" => {
           "title" => { "value" => "Launch day", "type" => "string" }
@@ -11,7 +15,7 @@ class PublicLandingPageTest < ActionDispatch::IntegrationTest
       }
     )
 
-    get "/api/v1/landing_pages/#{landing_page.public_identifier}"
+    get "/api/v1/landing_pages/#{landing_page.public_id}"
 
     assert_response :success
     assert_equal(
@@ -24,8 +28,8 @@ class PublicLandingPageTest < ActionDispatch::IntegrationTest
     )
   end
 
-  test "consumer receives a clear error for an unknown public identifier" do
-    get "/api/v1/landing_pages/unknown-page"
+  test "consumer receives a clear error for an unknown public id" do
+    get "/api/v1/landing_pages/999999999"
 
     assert_response :not_found
     assert_equal({ "error" => "Landing page not found" }, JSON.parse(response.body))
@@ -44,9 +48,9 @@ class PublicLandingPageTest < ActionDispatch::IntegrationTest
         { "media" => { "value" => "https://cdn.example/image.webp", "type" => "hosted_file" } }
       ]
     }
-    landing_page = LandingPage.create!(public_identifier: "nested-page", current_data: content)
+    landing_page = @user.landing_pages.create!(name: "Nested page", current_data: content)
 
-    get "/api/v1/landing_pages/#{landing_page.public_identifier}"
+    get "/api/v1/landing_pages/#{landing_page.public_id}"
 
     assert_response :success
     assert_equal content, JSON.parse(response.body)

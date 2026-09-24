@@ -1,5 +1,8 @@
 class LandingPage < ApplicationRecord
-  validates :public_identifier, presence: true, uniqueness: true
+  belongs_to :user
+
+  validates :name, presence: true
+  validates :public_id, uniqueness: true
   validate :current_data_must_be_present
   validate :current_data_must_follow_editable_field_convention
 

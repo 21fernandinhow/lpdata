@@ -3,4 +3,5 @@ class User < ApplicationRecord
       :jwt_authenticatable, jwt_revocation_strategy: JwtDenylist
 
     has_many :refresh_tokens, dependent: :destroy
+    has_many :landing_pages, dependent: :destroy
 end

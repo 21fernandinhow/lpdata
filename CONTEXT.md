@@ -39,5 +39,5 @@ Frontend independente que consulta um documento de conteúdo e o transforma na a
 _Evite_: Frontend do LPData, template hospedado
 
 **Identificador Público**:
-Identificador estável de uma landing page que uma aplicação consumidora usa para consultar seu documento de conteúdo sem autenticação.
-_Evite_: ID interno, token de edição
+Identificador numérico estável (`public_id`) de uma landing page que uma aplicação consumidora usa para consultar seu documento de conteúdo sem autenticação. Ele é independente do nome humano (`name`) e do ID interno de gerenciamento.
+_Evite_: slug, nome da landing page, ID interno, token de edição
