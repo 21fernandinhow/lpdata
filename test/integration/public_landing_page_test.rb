@@ -30,4 +30,19 @@ class PublicLandingPageTest < ActionDispatch::IntegrationTest
     assert_response :not_found
     assert_equal({ "error" => "Landing page not found" }, JSON.parse(response.body))
   end
+
+  test "consumer receives arbitrary nested JSON without transformation" do
+    content = {
+      "sections" => [
+        { "items" => [ 1, false, nil ] },
+        { "media" => { "value" => "https://cdn.example/image.webp", "type" => "hosted_file" } }
+      ]
+    }
+    landing_page = LandingPage.create!(public_identifier: "nested-page", current_data: content)
+
+    get "/api/v1/landing_pages/#{landing_page.public_identifier}"
+
+    assert_response :success
+    assert_equal content, JSON.parse(response.body)
+  end
 end
