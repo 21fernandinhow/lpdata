@@ -34,7 +34,13 @@ class PublicLandingPageTest < ActionDispatch::IntegrationTest
   test "consumer receives arbitrary nested JSON without transformation" do
     content = {
       "sections" => [
-        { "items" => [ 1, false, nil ] },
+        {
+          "items" => [
+            { "value" => 1, "type" => "number" },
+            { "value" => false, "type" => "boolean" },
+            { "value" => nil, "type" => "string" }
+          ]
+        },
         { "media" => { "value" => "https://cdn.example/image.webp", "type" => "hosted_file" } }
       ]
     }
