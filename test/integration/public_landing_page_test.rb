@@ -15,7 +15,7 @@ class PublicLandingPageTest < ActionDispatch::IntegrationTest
       }
     )
 
-    get "/api/v1/landing_pages/#{landing_page.public_id}"
+    get "/landing_pages/#{landing_page.public_id}"
 
     assert_response :success
     assert_equal(
@@ -29,7 +29,7 @@ class PublicLandingPageTest < ActionDispatch::IntegrationTest
   end
 
   test "consumer receives a clear error for an unknown public id" do
-    get "/api/v1/landing_pages/999999999"
+    get "/landing_pages/999999999"
 
     assert_response :not_found
     assert_equal({ "error" => "Landing page not found" }, JSON.parse(response.body))
@@ -50,7 +50,7 @@ class PublicLandingPageTest < ActionDispatch::IntegrationTest
     }
     landing_page = @user.landing_pages.create!(name: "Nested page", current_data: content)
 
-    get "/api/v1/landing_pages/#{landing_page.public_id}"
+    get "/landing_pages/#{landing_page.public_id}"
 
     assert_response :success
     assert_equal content, JSON.parse(response.body)

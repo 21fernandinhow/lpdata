@@ -4,7 +4,7 @@ class LandingPagesTest < ActionDispatch::IntegrationTest
   setup do
     @user = User.create!(email: "owner@example.com", password: "password123")
 
-    post "/api/v1/auth/sign_in", params: {
+    post "/auth/sign_in", params: {
       user: { email: @user.email, password: "password123" }
     }, as: :json
 
@@ -18,7 +18,7 @@ class LandingPagesTest < ActionDispatch::IntegrationTest
       }
     }
 
-    post "/api/v1/landing_pages", params: {
+    post "/landing_pages", params: {
       landing_page: {
         name: "Launch page",
         current_data: content
@@ -40,7 +40,7 @@ class LandingPagesTest < ActionDispatch::IntegrationTest
     other_user = User.create!(email: "other@example.com", password: "password123")
     other_user.landing_pages.create!(name: "Other page", current_data: {})
 
-    get "/api/v1/manage/landing_pages",
+    get "/manage/landing_pages",
       headers: { "Authorization" => "Bearer #{@access_token}" },
       as: :json
 
@@ -53,7 +53,7 @@ class LandingPagesTest < ActionDispatch::IntegrationTest
   test "authenticated user reads one of their landing pages" do
     landing_page = @user.landing_pages.create!(name: "Owned page", current_data: {})
 
-    get "/api/v1/manage/landing_pages/#{landing_page.id}",
+    get "/manage/landing_pages/#{landing_page.id}",
       headers: { "Authorization" => "Bearer #{@access_token}" },
       as: :json
 
@@ -70,7 +70,7 @@ class LandingPagesTest < ActionDispatch::IntegrationTest
     )
     replacement = { "items" => [ { "value" => 3, "type" => "number" } ] }
 
-    patch "/api/v1/manage/landing_pages/#{landing_page.id}", params: {
+    patch "/manage/landing_pages/#{landing_page.id}", params: {
       landing_page: { name: "Renamed page", current_data: replacement }
     }, headers: { "Authorization" => "Bearer #{@access_token}" }, as: :json
 
@@ -83,7 +83,7 @@ class LandingPagesTest < ActionDispatch::IntegrationTest
   test "authenticated user deletes their landing page" do
     landing_page = @user.landing_pages.create!(name: "Owned page", current_data: {})
 
-    delete "/api/v1/manage/landing_pages/#{landing_page.id}",
+    delete "/manage/landing_pages/#{landing_page.id}",
       headers: { "Authorization" => "Bearer #{@access_token}" },
       as: :json
 
@@ -95,7 +95,7 @@ class LandingPagesTest < ActionDispatch::IntegrationTest
     other_user = User.create!(email: "other@example.com", password: "password123")
     landing_page = other_user.landing_pages.create!(name: "Other page", current_data: {})
 
-    get "/api/v1/manage/landing_pages/#{landing_page.id}",
+    get "/manage/landing_pages/#{landing_page.id}",
       headers: { "Authorization" => "Bearer #{@access_token}" },
       as: :json
 
@@ -103,7 +103,7 @@ class LandingPagesTest < ActionDispatch::IntegrationTest
   end
 
   test "unauthenticated user cannot list landing pages" do
-    get "/api/v1/manage/landing_pages", as: :json
+    get "/manage/landing_pages", as: :json
 
     assert_response :unauthorized
     assert_equal(
@@ -113,7 +113,7 @@ class LandingPagesTest < ActionDispatch::IntegrationTest
   end
 
   test "invalid content returns a JSON validation error" do
-    post "/api/v1/landing_pages", params: {
+    post "/landing_pages", params: {
       landing_page: {
         name: "Invalid page",
         current_data: { "title" => "Loose value" }

@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users, skip: :all
 
-  post "api/v1/auth/sign_up", to: "api/v1/auth/registrations#create"
-  post "api/v1/auth/sign_in", to: "api/v1/auth/sessions#create"
-  delete "api/v1/auth/sign_out", to: "api/v1/auth/sessions#destroy"
-  post "api/v1/auth/refresh", to: "api/v1/auth/tokens#refresh"
-  get "api/v1/auth/me", to: "api/v1/auth/users#show"
+  post "auth/sign_up", to: "api/v1/auth/registrations#create"
+  post "auth/sign_in", to: "api/v1/auth/sessions#create"
+  delete "auth/sign_out", to: "api/v1/auth/sessions#destroy"
+  post "auth/refresh", to: "api/v1/auth/tokens#refresh"
+  get "auth/me", to: "api/v1/auth/users#show"
 
-  post "api/v1/landing_pages", to: "api/v1/landing_pages#create"
-  get "api/v1/manage/landing_pages", to: "api/v1/landing_pages#index"
-  get "api/v1/manage/landing_pages/:id", to: "api/v1/landing_pages#manage_show"
-  patch "api/v1/manage/landing_pages/:id", to: "api/v1/landing_pages#update"
-  delete "api/v1/manage/landing_pages/:id", to: "api/v1/landing_pages#destroy"
-  get "api/v1/landing_pages/:public_id", to: "api/v1/landing_pages#show"
+  post "landing_pages", to: "api/v1/landing_pages#create"
+  get "manage/landing_pages", to: "api/v1/landing_pages#index"
+  get "manage/landing_pages/:id", to: "api/v1/landing_pages#manage_show"
+  patch "manage/landing_pages/:id", to: "api/v1/landing_pages#update"
+  delete "manage/landing_pages/:id", to: "api/v1/landing_pages#destroy"
+  get "landing_pages/:public_id", to: "api/v1/landing_pages#show"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
