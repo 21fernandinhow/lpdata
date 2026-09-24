@@ -5,4 +5,5 @@
 /storage/*
 !/storage/.keep
 /config/master.key
+.env
 .DS_Store

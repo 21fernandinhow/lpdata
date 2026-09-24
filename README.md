@@ -1,24 +1,44 @@
-# README
+# LPData
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+API Rails para gerenciar landing pages, documentos de conteudo e assets.
 
-Things you may want to cover:
+## Desenvolvimento local
 
-* Ruby version
+Requisitos: Ruby na versao indicada em `.ruby-version` e PostgreSQL.
 
-* System dependencies
+```sh
+bin/setup
+bin/rails server
+```
 
-* Configuration
+Os testes podem ser executados com:
 
-* Database creation
+```sh
+bin/rails test
+```
 
-* Database initialization
+## Deploy no Railway
 
-* How to run the test suite
+Adicione um servico PostgreSQL ao projeto Railway e conecte este repositorio ao
+servico da aplicacao. O `Procfile` fixa o processo web em `production`; sem
+isso, um valor incorreto de `RAILS_ENV` pode fazer o Rails tentar carregar um
+ambiente inexistente.
 
-* Services (job queues, cache servers, search engines, etc.)
+Configure estas variaveis no servico da aplicacao:
 
-* Deployment instructions
+```text
+RAILS_ENV=production
+SECRET_KEY_BASE=<uma chave aleatoria longa>
+DEVISE_JWT_SECRET_KEY=<outra chave aleatoria longa>
+```
 
-* ...
+O Railway fornece `DATABASE_URL` automaticamente quando o PostgreSQL esta
+conectado ao servico. Gere as duas chaves localmente com `bin/rails secret` e
+adicione os valores diretamente nas variaveis do Railway; elas nao devem ser
+commitadas.
+
+Depois do primeiro deploy, execute as migracoes pelo shell do servico:
+
+```sh
+bin/rails db:prepare
+```
