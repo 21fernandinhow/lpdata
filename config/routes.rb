@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   delete "manage/landing_pages/:id", to: "api/v1/landing_pages#destroy"
   get "landing_pages/:public_id", to: "api/v1/landing_pages#show"
 
+  scope "api/v1", module: "api/v1" do
+    resources :assets, only: %i[index show create destroy]
+  end
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

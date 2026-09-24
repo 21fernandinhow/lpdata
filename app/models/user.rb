@@ -4,4 +4,5 @@ class User < ApplicationRecord
 
     has_many :refresh_tokens, dependent: :destroy
     has_many :landing_pages, dependent: :destroy
+    has_many :assets, dependent: :destroy
 end
