@@ -2,6 +2,8 @@
 
 LPData é a infraestrutura que separa a estrutura de uma landing page do conteúdo e dos assets que ela exibe. O contexto existe para que esses elementos sejam alterados sem modificar ou redistribuir o código consumidor.
 
+O LPData é uma aplicação exclusivamente API. Não possui telas HTML, dashboard visual, formulários ou frontend próprio; todas as operações administrativas e públicas são expostas como endpoints, e a apresentação pertence à Aplicação Consumidora.
+
 ## Linguagem
 
 **Usuário**:

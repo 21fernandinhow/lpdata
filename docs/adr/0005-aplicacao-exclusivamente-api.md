@@ -1,0 +1,3 @@
+# Aplicação exclusivamente API
+
+O LPData não terá telas HTML, dashboard visual, formulários ou frontend próprio. O backend expõe somente endpoints de API, com respostas JSON para operações públicas e autenticadas. A autenticação, o gerenciamento de Landing Pages e o gerenciamento de Assets serão consumidos por uma Aplicação Consumidora independente. A apresentação e a experiência de edição pertencem ao frontend externo e não serão implementadas no LPData.

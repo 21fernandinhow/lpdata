@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  devise_for :users, skip: :all
+
+  post "api/v1/auth/sign_up", to: "api/v1/auth/registrations#create"
+  post "api/v1/auth/sign_in", to: "api/v1/auth/sessions#create"
+  delete "api/v1/auth/sign_out", to: "api/v1/auth/sessions#destroy"
+  post "api/v1/auth/refresh", to: "api/v1/auth/tokens#refresh"
+  get "api/v1/auth/me", to: "api/v1/auth/users#show"
+
   get "api/v1/landing_pages/:public_identifier", to: "api/v1/landing_pages#show"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
