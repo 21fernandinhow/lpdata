@@ -38,7 +38,7 @@ class PublicLandingPageTest < ActionDispatch::IntegrationTest
           "items" => [
             { "value" => 1, "type" => "number" },
             { "value" => false, "type" => "boolean" },
-            { "value" => nil, "type" => "string" }
+            { "value" => "", "type" => "string" }
           ]
         },
         { "media" => { "value" => "https://cdn.example/image.webp", "type" => "hosted_file" } }

@@ -1,5 +1,6 @@
 class ContentDocumentValidator
   EDITABLE_TYPES = %w[string text number boolean url hosted_file external_file].freeze
+  STRING_TYPES = %w[string text url hosted_file external_file].freeze
 
   def self.errors_for(document)
     errors = []
@@ -28,8 +29,14 @@ class ContentDocumentValidator
     end
 
     if has_value
-      unless EDITABLE_TYPES.include?(node["type"])
+      type = node["type"]
+
+      unless EDITABLE_TYPES.include?(type)
         errors << "contains an unsupported editable field type at #{path}"
+      end
+
+      unless value_matches_type?(node["value"], type)
+        errors << "editable field value does not match its type at #{path}"
       end
       return
     end
@@ -37,5 +44,18 @@ class ContentDocumentValidator
     node.each { |key, child| validate_node(child, "#{path}.#{key}", errors) }
   end
 
-  private_class_method :validate_node, :validate_hash
+  def self.value_matches_type?(value, type)
+    case type
+    when *STRING_TYPES
+      value.is_a?(String)
+    when "number"
+      value.is_a?(Numeric)
+    when "boolean"
+      value == true || value == false
+    else
+      false
+    end
+  end
+
+  private_class_method :validate_node, :validate_hash, :value_matches_type?
 end

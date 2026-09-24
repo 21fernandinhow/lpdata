@@ -47,4 +47,14 @@ class LandingPageTest < ActiveSupport::TestCase
     assert_not landing_page.valid?
     assert landing_page.errors[:current_data].any? { |error| error.start_with?("editable fields must contain both value and type") }
   end
+
+  test "rejects a value that does not match its editable field type" do
+    landing_page = LandingPage.new(
+      public_identifier: "wrong-value-type",
+      current_data: { "title" => { "value" => true, "type" => "string" } }
+    )
+
+    assert_not landing_page.valid?
+    assert landing_page.errors[:current_data].any? { |error| error.start_with?("editable field value does not match its type") }
+  end
 end
