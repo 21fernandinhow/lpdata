@@ -11,6 +11,17 @@ class LandingPageTest < ActiveSupport::TestCase
     assert landing_page.valid?
   end
 
+  test "normalizes allowed hosts to lowercase" do
+    landing_page = @user.landing_pages.new(
+      name: "Configured hosts",
+      current_data: {},
+      allowed_hosts: [ "Example.COM", "WWW.Example.com" ]
+    )
+
+    assert landing_page.valid?
+    assert_equal [ "example.com", "www.example.com" ], landing_page.allowed_hosts
+  end
+
   test "requires a content document" do
     landing_page = @user.landing_pages.new(name: "Missing content", current_data: nil)
 

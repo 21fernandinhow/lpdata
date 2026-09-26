@@ -2,6 +2,7 @@ require "test_helper"
 
 class PublicLandingPageTest < ActionDispatch::IntegrationTest
   setup do
+    Rails.cache.clear
     @user = User.create!(email: "owner@example.com", password: "password123")
   end
 
@@ -54,5 +55,33 @@ class PublicLandingPageTest < ActionDispatch::IntegrationTest
 
     assert_response :success
     assert_equal content, JSON.parse(response.body)
+  end
+
+  test "consumer is rate limited after thirty requests without a configured origin" do
+    landing_page = @user.landing_pages.create!(name: "Limited page", current_data: {})
+
+    30.times do
+      get "/landing_pages/#{landing_page.public_id}"
+      assert_response :success
+    end
+
+    get "/landing_pages/#{landing_page.public_id}"
+
+    assert_response :too_many_requests
+    assert_equal "60", response.headers.fetch("Retry-After")
+  end
+
+  test "consumer with a configured origin receives the generous rate limit" do
+    landing_page = @user.landing_pages.create!(
+      name: "Hosted page",
+      allowed_hosts: [ "example.com" ],
+      current_data: {}
+    )
+
+    31.times do
+      get "/landing_pages/#{landing_page.public_id}", headers: { "Origin" => "https://www.example.com" }
+      assert_response :success
+      assert_equal "*", response.headers.fetch("Access-Control-Allow-Origin")
+    end
   end
 end

@@ -33,6 +33,21 @@ class LandingPagesTest < ActionDispatch::IntegrationTest
     assert response_body.dig("landing_page", "public_id").present?
     assert_equal content, response_body.dig("landing_page", "current_data")
     assert_equal @user.id, response_body.dig("landing_page", "user_id")
+    assert_equal [], response_body.dig("landing_page", "allowed_hosts")
+  end
+
+  test "authenticated user creates a landing page with allowed hosts" do
+    post "/landing_pages", params: {
+      landing_page: {
+        name: "Hosted page",
+        current_data: {},
+        allowed_hosts: [ "Example.COM", "www.Example.com" ]
+      }
+    }, headers: { "Authorization" => "Bearer #{@access_token}" }, as: :json
+
+    assert_response :created
+    assert_equal [ "example.com", "www.example.com" ],
+      JSON.parse(response.body).dig("landing_page", "allowed_hosts")
   end
 
   test "authenticated user lists only their landing pages" do
@@ -78,6 +93,18 @@ class LandingPagesTest < ActionDispatch::IntegrationTest
     response_body = JSON.parse(response.body).fetch("landing_page")
     assert_equal "Renamed page", response_body.fetch("name")
     assert_equal replacement, response_body.fetch("current_data")
+  end
+
+  test "authenticated user updates allowed hosts" do
+    landing_page = @user.landing_pages.create!(name: "Owned page", current_data: {})
+
+    patch "/manage/landing_pages/#{landing_page.id}", params: {
+      landing_page: { allowed_hosts: [ "App.Example.COM" ] }
+    }, headers: { "Authorization" => "Bearer #{@access_token}" }, as: :json
+
+    assert_response :success
+    assert_equal [ "app.example.com" ],
+      JSON.parse(response.body).dig("landing_page", "allowed_hosts")
   end
 
   test "authenticated user deletes their landing page" do

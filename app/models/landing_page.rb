@@ -3,6 +3,7 @@ class LandingPage < ApplicationRecord
 
   validates :name, presence: true
   validates :public_id, uniqueness: true
+  before_validation :normalize_allowed_hosts
   validate :current_data_must_be_present
   validate :current_data_must_follow_editable_field_convention
 
@@ -16,5 +17,9 @@ class LandingPage < ApplicationRecord
     ContentDocumentValidator.errors_for(current_data).each do |message|
       errors.add(:current_data, message)
     end
+  end
+
+  def normalize_allowed_hosts
+    self.allowed_hosts = Array(allowed_hosts).map { |host| host.to_s.downcase }
   end
 end

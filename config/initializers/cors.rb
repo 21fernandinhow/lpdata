@@ -10,4 +10,13 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       expose: %w[Authorization],
       max_age: 600
   end
+
+  allow do
+    origins "*"
+
+    resource "/landing_pages/*",
+      headers: "*",
+      methods: %i[get options],
+      max_age: 600
+  end
 end
