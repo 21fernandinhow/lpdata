@@ -7,10 +7,10 @@ description: Create an account, authenticate requests, and keep tokens valid.
 
 Creating and managing Landing Pages and Assets requires an account. Signing in returns an access token and a refresh token. Send the access token in the `Authorization` header as `Bearer <token>`.
 
-Set your deployment URL and token values without storing them in the repository:
+Set the API URL and token values without storing them in the repository:
 
 ```bash
-export LPDATA_API_URL="https://<your-api-url>"
+export LPDATA_API_URL="https://api.lpdata.io"
 export LPDATA_ACCESS_TOKEN="<access_token>"
 export LPDATA_REFRESH_TOKEN="<refresh_token>"
 ```

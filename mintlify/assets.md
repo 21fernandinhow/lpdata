@@ -12,7 +12,7 @@ Os Assets são arquivos associados à sua conta. Listar, consultar, enviar ou ex
 Envie o arquivo como multipart form data no campo `asset[file]`:
 
 ```bash
-curl --request POST "$LPDATA_API_URL/api/v1/assets" \
+curl --request POST "$LPDATA_API_URL/assets" \
   --header "Authorization: Bearer $LPDATA_ACCESS_TOKEN" \
   --form 'asset[file]=@./hero.webp'
 ```
@@ -23,6 +23,7 @@ Uma resposta `201 Created` contém metadados e a URL pública do arquivo:
 {
   "asset": {
     "id": 7,
+    "user_id": 42,
     "filename": "hero.webp",
     "content_type": "image/webp",
     "byte_size": 18432,
@@ -31,30 +32,34 @@ Uma resposta `201 Created` contém metadados e a URL pública do arquivo:
 }
 ```
 
-Use `public_url` como referência externa no Documento de Conteúdo da Landing Page.
+Use `public_url` como `value` de um Campo Editável do tipo `hosted_file` no Documento de Conteúdo da Landing Page.
 
 ## Listar e consultar Assets
 
 Liste os arquivos da conta:
 
 ```bash
-curl "$LPDATA_API_URL/api/v1/assets" \
+curl "$LPDATA_API_URL/assets" \
   --header "Authorization: Bearer $LPDATA_ACCESS_TOKEN"
 ```
 
 Consulte um Asset próprio por `id`:
 
 ```bash
-curl "$LPDATA_API_URL/api/v1/assets/<id>" \
+curl "$LPDATA_API_URL/assets/<id>" \
   --header "Authorization: Bearer $LPDATA_ACCESS_TOKEN"
 ```
 
-As respostas usam os envelopes `assets` e `asset`. Uma conta não pode consultar Assets de outra; o endpoint retorna `404 Not Found`.
+As respostas usam os envelopes `assets` e `asset`. Uma conta não pode consultar Assets de outra; o endpoint retorna `404 Not Found`:
+
+```json
+{ "error": "Asset not found" }
+```
 
 ## Excluir um Asset
 
 ```bash
-curl --request DELETE "$LPDATA_API_URL/api/v1/assets/<id>" \
+curl --request DELETE "$LPDATA_API_URL/assets/<id>" \
   --header "Authorization: Bearer $LPDATA_ACCESS_TOKEN"
 ```
 

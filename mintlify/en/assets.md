@@ -12,7 +12,7 @@ Assets are files associated with your account. Listing, retrieving, uploading, o
 Upload the file as multipart form data in the `asset[file]` field:
 
 ```bash
-curl --request POST "$LPDATA_API_URL/api/v1/assets" \
+curl --request POST "$LPDATA_API_URL/assets" \
   --header "Authorization: Bearer $LPDATA_ACCESS_TOKEN" \
   --form 'asset[file]=@./hero.webp'
 ```
@@ -23,6 +23,7 @@ A `201 Created` response contains metadata and the public file URL:
 {
   "asset": {
     "id": 7,
+    "user_id": 42,
     "filename": "hero.webp",
     "content_type": "image/webp",
     "byte_size": 18432,
@@ -31,30 +32,34 @@ A `201 Created` response contains metadata and the public file URL:
 }
 ```
 
-Use `public_url` as an external reference in the Landing Page Content Document.
+Use `public_url` as the `value` of a `hosted_file` Editable Field in the Landing Page Content Document.
 
 ## List and retrieve Assets
 
 List the files owned by the account:
 
 ```bash
-curl "$LPDATA_API_URL/api/v1/assets" \
+curl "$LPDATA_API_URL/assets" \
   --header "Authorization: Bearer $LPDATA_ACCESS_TOKEN"
 ```
 
 Retrieve one owned Asset by `id`:
 
 ```bash
-curl "$LPDATA_API_URL/api/v1/assets/<id>" \
+curl "$LPDATA_API_URL/assets/<id>" \
   --header "Authorization: Bearer $LPDATA_ACCESS_TOKEN"
 ```
 
-Responses use the `assets` and `asset` wrappers. An account cannot retrieve another account's Assets; the endpoint returns `404 Not Found`.
+Responses use the `assets` and `asset` wrappers. An account cannot retrieve another account's Assets; the endpoint returns `404 Not Found`:
+
+```json
+{ "error": "Asset not found" }
+```
 
 ## Delete an Asset
 
 ```bash
-curl --request DELETE "$LPDATA_API_URL/api/v1/assets/<id>" \
+curl --request DELETE "$LPDATA_API_URL/assets/<id>" \
   --header "Authorization: Bearer $LPDATA_ACCESS_TOKEN"
 ```
 

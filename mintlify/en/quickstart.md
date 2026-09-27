@@ -9,13 +9,11 @@ The workflow has two parts: you manage content with an authenticated account, an
 
 ## Set the API URL
 
-Use the base URL of your LPData deployment, without a trailing slash:
+The LPData API is available at `https://api.lpdata.io`. The examples use this base URL, without a trailing slash:
 
 ```bash
-export LPDATA_API_URL="https://<your-api-url>"
+export LPDATA_API_URL="https://api.lpdata.io"
 ```
-
-Replace the value with the API address provided for your deployment.
 
 ## Sign in and get a token
 

@@ -9,13 +9,11 @@ O fluxo tem duas partes: você gerencia o conteúdo com uma conta autenticada; s
 
 ## Configure a URL da API
 
-Use a URL base da implantação do LPData, sem uma barra no final:
+A API do LPData está disponível em `https://api.lpdata.io`. Os exemplos usam essa URL base, sem barra no final:
 
 ```bash
-export LPDATA_API_URL="https://<url-da-sua-api>"
+export LPDATA_API_URL="https://api.lpdata.io"
 ```
-
-Substitua o valor pelo endereço da API fornecido para sua implantação.
 
 ## Entre e obtenha um token
 

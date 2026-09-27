@@ -7,7 +7,7 @@ description: LPData API endpoints, authentication, and responses.
 
 This manual reference describes the endpoints used by consumer-application owners. LPData does not publish an OpenAPI specification in this version.
 
-Set `LPDATA_API_URL` to the base URL of your deployment, without a trailing slash. Detailed examples are available in the [Authentication](/en/authentication), [Landing Pages](/en/landing-pages), and [Assets](/en/assets) guides.
+The API base URL is `https://api.lpdata.io`; the examples use it through the `LPDATA_API_URL` variable. Detailed examples are available in the [Authentication](/en/authentication), [Landing Pages](/en/landing-pages), and [Assets](/en/assets) guides.
 
 ## Authentication
 
@@ -40,10 +40,10 @@ All Asset routes require a Bearer token. Uploads use multipart form data in the 
 
 | Method | Endpoint | Access | Success |
 | --- | --- | --- | --- |
-| `GET` | `/api/v1/assets` | Bearer | `200 OK`; owned Assets |
-| `POST` | `/api/v1/assets` | Bearer | `201 Created`; uploaded Asset |
-| `GET` | `/api/v1/assets/:id` | Bearer | `200 OK`; owned Asset |
-| `DELETE` | `/api/v1/assets/:id` | Bearer | `204 No Content` |
+| `GET` | `/assets` | Bearer | `200 OK`; owned Assets |
+| `POST` | `/assets` | Bearer | `201 Created`; uploaded Asset |
+| `GET` | `/assets/:id` | Bearer | `200 OK`; owned Asset |
+| `DELETE` | `/assets/:id` | Bearer | `204 No Content` |
 
 ## Error responses
 
@@ -51,5 +51,5 @@ All Asset routes require a Bearer token. Uploads use multipart form data in the 
 | --- | --- |
 | `401 Unauthorized` | Missing or invalid token, or incorrect sign-in credentials |
 | `404 Not Found` | Unknown identifier or resource not owned by the authenticated user |
-| `422 Unprocessable Content` | Invalid sign-up, Landing Page, or Asset data |
-| `429 Too Many Requests` | Public-read rate limit exceeded; check the `Retry-After` header |
+| `422 Unprocessable Content` | Invalid sign-up, Landing Page, or Asset data; the body contains `errors` with the messages |
+| `429 Too Many Requests` | Public-read rate limit exceeded (30 or 1,000 requests per minute per IP, see [Allowed hosts](/en/landing-pages#allowed-hosts)); check the `Retry-After` header |

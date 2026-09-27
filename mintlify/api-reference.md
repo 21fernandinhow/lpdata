@@ -7,7 +7,7 @@ description: Endpoints, autenticação e respostas da API do LPData.
 
 Esta referência manual descreve os endpoints usados pelos donos das Aplicações Consumidoras. O LPData não publica uma especificação OpenAPI nesta versão.
 
-Configure `LPDATA_API_URL` com a URL base da implantação, sem barra final. Os exemplos detalhados estão nos guias de [Autenticação](/authentication), [Landing Pages](/landing-pages) e [Assets](/assets).
+A URL base da API é `https://api.lpdata.io`; os exemplos a usam pela variável `LPDATA_API_URL`. Os exemplos detalhados estão nos guias de [Autenticação](/authentication), [Landing Pages](/landing-pages) e [Assets](/assets).
 
 ## Autenticação
 
@@ -40,10 +40,10 @@ Todas as rotas de Assets exigem Bearer token. Upload usa multipart form data no 
 
 | Método | Endpoint | Acesso | Sucesso |
 | --- | --- | --- | --- |
-| `GET` | `/api/v1/assets` | Bearer | `200 OK`; Assets próprios |
-| `POST` | `/api/v1/assets` | Bearer | `201 Created`; Asset enviado |
-| `GET` | `/api/v1/assets/:id` | Bearer | `200 OK`; Asset próprio |
-| `DELETE` | `/api/v1/assets/:id` | Bearer | `204 No Content` |
+| `GET` | `/assets` | Bearer | `200 OK`; Assets próprios |
+| `POST` | `/assets` | Bearer | `201 Created`; Asset enviado |
+| `GET` | `/assets/:id` | Bearer | `200 OK`; Asset próprio |
+| `DELETE` | `/assets/:id` | Bearer | `204 No Content` |
 
 ## Respostas de erro
 
@@ -51,5 +51,5 @@ Todas as rotas de Assets exigem Bearer token. Upload usa multipart form data no 
 | --- | --- |
 | `401 Unauthorized` | Token ausente, inválido ou credenciais de login incorretas |
 | `404 Not Found` | Identificador inexistente ou recurso que não pertence ao usuário autenticado |
-| `422 Unprocessable Content` | Dados de cadastro, Landing Page ou Asset inválidos |
-| `429 Too Many Requests` | Limite da leitura pública excedido; consulte o header `Retry-After` |
+| `422 Unprocessable Content` | Dados de cadastro, Landing Page ou Asset inválidos; o corpo traz `errors` com as mensagens |
+| `429 Too Many Requests` | Limite da leitura pública excedido (30 ou 1.000 requisições por minuto por IP, conforme [Hosts permitidos](/landing-pages#hosts-permitidos)); consulte o header `Retry-After` |

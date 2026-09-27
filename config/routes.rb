@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   delete "manage/landing_pages/:id", to: "api/v1/landing_pages#destroy"
   get "landing_pages/:public_id", to: "api/v1/landing_pages#show"
 
-  scope "api/v1", module: "api/v1" do
+  scope module: "api/v1" do
     resources :assets, only: %i[index show create destroy]
   end
 

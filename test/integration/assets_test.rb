@@ -14,7 +14,7 @@ class AssetsTest < ActionDispatch::IntegrationTest
   test "authenticated user uploads an asset and receives metadata and a public URL" do
     file = fixture_file_upload("example.txt", "text/plain")
 
-    post "/api/v1/assets", params: {
+    post "/assets", params: {
       asset: { file: file }
     }, headers: { "Authorization" => "Bearer #{@access_token}" }
 
@@ -32,7 +32,7 @@ class AssetsTest < ActionDispatch::IntegrationTest
     other_user = User.create!(email: "other@example.com", password: "password123")
     other_user.assets.create!(file: fixture_file_upload("example.txt", "text/plain"))
 
-    get "/api/v1/assets",
+    get "/assets",
       headers: { "Authorization" => "Bearer #{@access_token}" },
       as: :json
 
@@ -44,7 +44,7 @@ class AssetsTest < ActionDispatch::IntegrationTest
   test "authenticated user reads one of their assets" do
     asset = @user.assets.create!(file: fixture_file_upload("example.txt", "text/plain"))
 
-    get "/api/v1/assets/#{asset.id}",
+    get "/assets/#{asset.id}",
       headers: { "Authorization" => "Bearer #{@access_token}" },
       as: :json
 
@@ -57,7 +57,7 @@ class AssetsTest < ActionDispatch::IntegrationTest
   test "authenticated user deletes their asset" do
     asset = @user.assets.create!(file: fixture_file_upload("example.txt", "text/plain"))
 
-    delete "/api/v1/assets/#{asset.id}",
+    delete "/assets/#{asset.id}",
       headers: { "Authorization" => "Bearer #{@access_token}" },
       as: :json
 
@@ -69,15 +69,16 @@ class AssetsTest < ActionDispatch::IntegrationTest
     other_user = User.create!(email: "other@example.com", password: "password123")
     asset = other_user.assets.create!(file: fixture_file_upload("example.txt", "text/plain"))
 
-    get "/api/v1/assets/#{asset.id}",
+    get "/assets/#{asset.id}",
       headers: { "Authorization" => "Bearer #{@access_token}" },
       as: :json
 
     assert_response :not_found
+    assert_equal({ "error" => "Asset not found" }, JSON.parse(response.body))
   end
 
   test "unauthenticated user cannot manage assets" do
-    get "/api/v1/assets", as: :json
+    get "/assets", as: :json
     assert_response :unauthorized
   end
 end

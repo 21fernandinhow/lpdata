@@ -7,10 +7,10 @@ description: Crie uma conta, autentique requisições e mantenha tokens válidos
 
 Criar e gerenciar Landing Pages e Assets exige uma conta. O login retorna um token de acesso e um token de atualização. Envie o token de acesso no header `Authorization` como `Bearer <token>`.
 
-Defina a URL da sua implantação e os valores recebidos sem gravá-los no repositório:
+Defina a URL da API e os tokens recebidos sem gravá-los no repositório:
 
 ```bash
-export LPDATA_API_URL="https://<url-da-sua-api>"
+export LPDATA_API_URL="https://api.lpdata.io"
 export LPDATA_ACCESS_TOKEN="<access_token>"
 export LPDATA_REFRESH_TOKEN="<refresh_token>"
 ```
