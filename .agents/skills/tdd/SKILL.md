@@ -13,6 +13,8 @@ When exploring the codebase, read `CONTEXT.md` (if it exists) so test names and 
 
 Tests verify behavior through public interfaces, not implementation details. Code can change entirely; tests shouldn't. A good test reads like a specification: "user can checkout with valid cart" tells you exactly what capability exists, and it survives refactors because it doesn't care about internal structure.
 
+For a consumer-facing API flow, treat the matching public documentation as part of the contract: update its Portuguese and English pages in the same delivery when the flow changes, then validate the Mintlify site.
+
 See [tests.md](tests.md) for examples and [mocking.md](mocking.md) for mocking guidelines.
 
 ## Seams: where tests go

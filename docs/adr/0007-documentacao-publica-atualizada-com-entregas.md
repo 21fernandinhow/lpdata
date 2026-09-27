@@ -1,0 +1,3 @@
+# Documentação pública atualizada com as entregas
+
+A documentação Mintlify voltada aos donos das Aplicações Consumidoras é parte do contrato do produto: quando uma entrega altera comportamento ou integração observável pela API, suas páginas em português brasileiro e inglês são atualizadas na mesma entrega. `AGENTS.md` e as skills de desenvolvimento mantêm esse checkpoint; ADRs e `CONTEXT.md` continuam registrando somente decisões e mudanças de domínio que atendam aos critérios próprios.

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "LPData",
+  "theme": "mint",
+  "colors": {
+    "primary": "#0F766E",
+    "light": "#14B8A6",
+    "dark": "#0F766E"
+  },
+  "navigation": {
+    "languages": [
+      {
+        "language": "pt-BR",
+        "default": true,
+        "groups": [
+          {
+            "group": "Começar",
+            "pages": ["index", "quickstart", "authentication"]
+          },
+          {
+            "group": "Gerenciar conteúdo",
+            "pages": ["landing-pages", "assets"]
+          },
+          {
+            "group": "Referência",
+            "pages": ["api-reference"]
+          }
+        ]
+      },
+      {
+        "language": "en",
+        "groups": [
+          {
+            "group": "Get started",
+            "pages": ["en/index", "en/quickstart", "en/authentication"]
+          },
+          {
+            "group": "Manage content",
+            "pages": ["en/landing-pages", "en/assets"]
+          },
+          {
+            "group": "Reference",
+            "pages": ["en/api-reference"]
+          }
+        ]
+      }
+    ]
+  }
+}
