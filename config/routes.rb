@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post "auth/refresh", to: "api/v1/auth/tokens#refresh"
   get "auth/me", to: "api/v1/auth/users#show"
 
-  post "landing_pages", to: "api/v1/landing_pages#create"
+  post "manage/landing_pages", to: "api/v1/landing_pages#create"
   get "manage/landing_pages", to: "api/v1/landing_pages#index"
   get "manage/landing_pages/:id", to: "api/v1/landing_pages#manage_show"
   patch "manage/landing_pages/:id", to: "api/v1/landing_pages#update"

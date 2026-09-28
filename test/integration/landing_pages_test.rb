@@ -18,7 +18,7 @@ class LandingPagesTest < ActionDispatch::IntegrationTest
       }
     }
 
-    post "/landing_pages", params: {
+    post "/manage/landing_pages", params: {
       landing_page: {
         name: "Launch page",
         current_data: content
@@ -36,8 +36,17 @@ class LandingPagesTest < ActionDispatch::IntegrationTest
     assert_equal [], response_body.dig("landing_page", "allowed_hosts")
   end
 
-  test "authenticated user creates a landing page with allowed hosts" do
+  test "landing pages are not created through the public path" do
     post "/landing_pages", params: {
+      landing_page: { name: "Launch page", current_data: {} }
+    }, headers: { "Authorization" => "Bearer #{@access_token}" }, as: :json
+
+    assert_response :not_found
+    assert_equal 0, @user.landing_pages.count
+  end
+
+  test "authenticated user creates a landing page with allowed hosts" do
+    post "/manage/landing_pages", params: {
       landing_page: {
         name: "Hosted page",
         current_data: {},
@@ -140,7 +149,7 @@ class LandingPagesTest < ActionDispatch::IntegrationTest
   end
 
   test "invalid content returns a JSON validation error" do
-    post "/landing_pages", params: {
+    post "/manage/landing_pages", params: {
       landing_page: {
         name: "Invalid page",
         current_data: { "title" => "Loose value" }

@@ -25,7 +25,7 @@ Endpoints marked as authenticated require `Authorization: Bearer <access_token>`
 
 | Method | Endpoint | Access | Success |
 | --- | --- | --- | --- |
-| `POST` | `/landing_pages` | Bearer | `201 Created`; created Landing Page |
+| `POST` | `/manage/landing_pages` | Bearer | `201 Created`; created Landing Page |
 | `GET` | `/manage/landing_pages` | Bearer | `200 OK`; owned Landing Pages |
 | `GET` | `/manage/landing_pages/:id` | Bearer | `200 OK`; owned Landing Page |
 | `PATCH` | `/manage/landing_pages/:id` | Bearer | `200 OK`; updated Landing Page |

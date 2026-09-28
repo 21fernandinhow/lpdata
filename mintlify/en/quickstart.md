@@ -36,7 +36,7 @@ Do not put credentials or tokens in public source code or share them. Management
 Send the Content Document expected by your application. LPData preserves its JSON structure; your application defines how to present that content.
 
 ```http
-POST https://api.lpdata.io/landing_pages
+POST https://api.lpdata.io/manage/landing_pages
 Authorization: Bearer <access_token>
 Content-Type: application/json
 

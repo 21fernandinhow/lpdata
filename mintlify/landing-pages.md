@@ -9,10 +9,10 @@ Operações de gerenciamento exigem o token Bearer do usuário proprietário. O 
 
 ## Criar
 
-`POST /landing_pages` recebe um nome e o Documento de Conteúdo definido pela sua aplicação. `allowed_hosts` é opcional.
+`POST /manage/landing_pages` recebe um nome e o Documento de Conteúdo definido pela sua aplicação. `allowed_hosts` é opcional.
 
 ```http
-POST https://api.lpdata.io/landing_pages
+POST https://api.lpdata.io/manage/landing_pages
 Authorization: Bearer <access_token>
 Content-Type: application/json
 
