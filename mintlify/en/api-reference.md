@@ -52,4 +52,4 @@ All Asset routes require a Bearer token. Uploads use multipart form data in the 
 | `401 Unauthorized` | Missing or invalid token, or incorrect sign-in credentials |
 | `404 Not Found` | Unknown identifier or resource not owned by the authenticated user |
 | `422 Unprocessable Content` | Invalid sign-up, Landing Page, or Asset data; the body contains `errors` with the messages |
-| `429 Too Many Requests` | Public-read rate limit exceeded (30 or 1,000 requests per minute per IP, see [Allowed hosts](/en/landing-pages#allowed-hosts)); check the `Retry-After` header |
+| `429 Too Many Requests` | Public-read rate limit exceeded (30 or 1,000 requests per minute per IP, see [Rate limits](/en/public-content#rate-limits)); check the `Retry-After` header |

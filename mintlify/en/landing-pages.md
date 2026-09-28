@@ -87,7 +87,7 @@ Other possible messages: `contains a value outside an editable field`, `editable
 
 `allowed_hosts` lists the frontend hosts that read the Landing Page from the browser, such as `["example.com", "localhost:3000"]`. Values are lowercased. A host without a port also matches its subdomains; a host with a port requires an exact host and port match.
 
-Public reads are rate limited per IP each minute: 1,000 requests when the `Origin` header matches an allowed host and 30 otherwise, such as server-side calls. When the limit is exceeded, the API returns `429 Too Many Requests` with `Retry-After: 60`.
+Reads from these hosts get a higher limit; see [Rate limits](/en/public-content#rate-limits). To fetch published content, see [Read published content](/en/public-content).
 
 ## List and retrieve
 
@@ -136,19 +136,3 @@ A successful update returns `200 OK` and the updated `landing_page` object.
 ## Delete
 
 `DELETE /manage/landing_pages/:id` removes a Landing Page owned by the authenticated user and returns `204 No Content`.
-
-## Read content in the consumer application
-
-`GET /landing_pages/:public_id` is public and returns only the Content Document as JSON, without authentication and without the `landing_page` wrapper.
-
-```http
-GET https://api.lpdata.io/landing_pages/<public_id>
-```
-
-An unknown identifier returns `404 Not Found`:
-
-```json
-{ "error": "Landing page not found" }
-```
-
-Reads above the limit return `429 Too Many Requests`; see [Allowed hosts](#allowed-hosts).

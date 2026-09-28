@@ -52,4 +52,4 @@ Todas as rotas de Assets exigem Bearer token. Upload usa multipart form data no 
 | `401 Unauthorized` | Token ausente, inválido ou credenciais de login incorretas |
 | `404 Not Found` | Identificador inexistente ou recurso que não pertence ao usuário autenticado |
 | `422 Unprocessable Content` | Dados de cadastro, Landing Page ou Asset inválidos; o corpo traz `errors` com as mensagens |
-| `429 Too Many Requests` | Limite da leitura pública excedido (30 ou 1.000 requisições por minuto por IP, conforme [Hosts permitidos](/landing-pages#hosts-permitidos)); consulte o header `Retry-After` |
+| `429 Too Many Requests` | Limite da leitura pública excedido (30 ou 1.000 requisições por minuto por IP, veja [Limite de leituras](/public-content#limite-de-leituras)); consulte o header `Retry-After` |

@@ -17,7 +17,7 @@ O LPData é uma plataforma para **gerenciar e servir o conteúdo de landing page
     Envie imagens e outros arquivos como Assets e use as URLs retornadas no documento.
   </Step>
   <Step title="Sirva o conteúdo">
-    Seu frontend busca o documento em `GET https://api.lpdata.io/landing_pages/<public_id>`, sem autenticação, e renderiza a página.
+    Seu frontend busca o documento em `GET https://api.lpdata.io/landing_pages/<public_id>`, sem autenticação, e renderiza a página. Veja [Ler conteúdo publicado](/public-content).
   </Step>
   <Step title="Atualize quando quiser">
     Altere o documento pela API autenticada. A próxima leitura já entrega o novo conteúdo.
@@ -44,12 +44,16 @@ O LPData é exclusivamente uma API: não tem editor visual nem hospeda páginas.
   <Card title="Autenticação" icon="key" href="/authentication">
     Cadastro, login e ciclo de vida dos tokens.
   </Card>
+  <Card title="Ler conteúdo publicado" icon="globe" href="/public-content">
+    Leitura pública na aplicação consumidora e limites de leitura.
+  </Card>
   <Card title="Landing Pages" icon="file-lines" href="/landing-pages">
-    Documento de Conteúdo, hosts permitidos e leitura pública.
+    Documento de Conteúdo, hosts permitidos e gerenciamento.
   </Card>
   <Card title="Assets" icon="image" href="/assets">
     Envio e gerenciamento de arquivos para o conteúdo.
   </Card>
+  <Card title="Referência da API" icon="code" href="/api-reference">
+    Lista completa de endpoints, acessos e respostas de erro.
+  </Card>
 </CardGroup>
-
-Procurando a lista completa de endpoints? Veja a [Referência da API](/api-reference).

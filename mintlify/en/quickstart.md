@@ -78,4 +78,4 @@ A successful read returns, for example:
 }
 ```
 
-See [Landing Pages](/en/landing-pages) to manage and read documents, and the [API reference](/en/api-reference) for the endpoint list.
+See [Landing Pages](/en/landing-pages) to manage documents, [Read published content](/en/public-content) for public-read details, and the [API reference](/en/api-reference) for the endpoint list.

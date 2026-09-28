@@ -78,4 +78,4 @@ Uma leitura bem-sucedida retorna, por exemplo:
 }
 ```
 
-Consulte [Landing Pages](/landing-pages) para gerenciar e ler documentos, e [Referência da API](/api-reference) para a lista de endpoints.
+Consulte [Landing Pages](/landing-pages) para gerenciar documentos, [Ler conteúdo publicado](/public-content) para os detalhes da leitura pública e [Referência da API](/api-reference) para a lista de endpoints.

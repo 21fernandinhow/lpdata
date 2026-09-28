@@ -24,6 +24,10 @@
             "pages": ["index", "quickstart", "authentication"]
           },
           {
+            "group": "Consumir conteúdo",
+            "pages": ["public-content"]
+          },
+          {
             "group": "Gerenciar conteúdo",
             "pages": ["landing-pages", "assets"]
           },
@@ -39,6 +43,10 @@
           {
             "group": "Get started",
             "pages": ["en/index", "en/quickstart", "en/authentication"]
+          },
+          {
+            "group": "Consume content",
+            "pages": ["en/public-content"]
           },
           {
             "group": "Manage content",
