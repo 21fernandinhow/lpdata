@@ -3,14 +3,14 @@
   "name": "LPData",
   "theme": "mint",
   "colors": {
-    "primary": "#8B5CF6",
-    "light": "#A78BFA",
-    "dark": "#7C3AED"
+    "primary": "#14b8a6",
+    "light": "#2dd4bf",
+    "dark": "#0d9488"
   },
   "background": {
     "color": {
-      "light": "#f5f3ff",
-      "dark": "#15072e"
+      "light": "#f0fdfa",
+      "dark": "#021a19"
     }
   },
   "navigation": {

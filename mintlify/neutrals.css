@@ -1,152 +1,152 @@
 /*
  * Tons neutros do Tailwind (neutral, stone, zinc, slate) usados pelo Mintlify,
- * trocados pelo tom equivalente da paleta roxa. Cores semânticas não são afetadas.
+ * trocados pelo tom equivalente da paleta teal. Cores semânticas não são afetadas.
  */
 
-html .border-neutral-200 { border-color: rgb(221 214 254); }
-html .border-stone-50 { border-color: rgb(245 243 255); }
-html .border-stone-100 { border-color: rgb(237 233 254); }
-html .border-stone-200 { border-color: rgb(221 214 254); }
-html .border-stone-200\/70 { border-color: rgb(221 214 254 / 70%); }
-html .border-stone-500\/20 { border-color: rgb(139 92 246 / 20%); }
-html .border-stone-600\/50 { border-color: rgb(124 58 237 / 50%); }
-html .border-stone-950\/10 { border-color: rgb(46 16 101 / 10%); }
-html .border-zinc-100 { border-color: rgb(237 233 254); }
-html .border-zinc-200 { border-color: rgb(221 214 254); }
-html .border-zinc-500\/20 { border-color: rgb(139 92 246 / 20%); }
-html .bg-neutral-50 { background-color: rgb(245 243 255); }
-html .bg-neutral-200 { background-color: rgb(221 214 254); }
-html .bg-neutral-300 { background-color: rgb(196 181 253); }
-html .bg-neutral-800 { background-color: rgb(91 33 182); }
-html .bg-stone-50 { background-color: rgb(245 243 255); }
-html .bg-stone-50\/50 { background-color: rgb(245 243 255 / 50%); }
-html .bg-stone-100 { background-color: rgb(237 233 254); }
-html .bg-stone-100\/50 { background-color: rgb(237 233 254 / 50%); }
-html .bg-stone-200 { background-color: rgb(221 214 254); }
-html .bg-stone-200\/70 { background-color: rgb(221 214 254 / 70%); }
-html .bg-stone-400 { background-color: rgb(167 139 250); }
-html .bg-stone-500 { background-color: rgb(139 92 246); }
-html .bg-stone-700 { background-color: rgb(109 40 217); }
-html .bg-stone-800 { background-color: rgb(91 33 182); }
-html .bg-stone-900 { background-color: rgb(76 29 149); }
-html .bg-stone-950\/5 { background-color: rgb(46 16 101 / 5%); }
-html .bg-zinc-50\/50 { background-color: rgb(245 243 255 / 50%); }
-html .bg-zinc-100 { background-color: rgb(237 233 254); }
-html .bg-zinc-400 { background-color: rgb(167 139 250); }
-html .bg-zinc-950\/90 { background-color: rgb(46 16 101 / 90%); }
-html .fill-stone-400 { fill: rgb(167 139 250); }
-html .fill-stone-800 { fill: rgb(91 33 182); }
-html .text-neutral-800 { color: rgb(91 33 182); }
-html .text-neutral-900 { color: rgb(76 29 149); }
-html .text-stone-50 { color: rgb(245 243 255); }
-html .text-stone-300 { color: rgb(196 181 253); }
-html .text-stone-400 { color: rgb(167 139 250); }
-html .text-stone-500 { color: rgb(139 92 246); }
-html .text-stone-600 { color: rgb(124 58 237); }
-html .text-stone-700 { color: rgb(109 40 217); }
-html .text-stone-800 { color: rgb(91 33 182); }
-html .text-stone-900 { color: rgb(76 29 149); }
-html .text-stone-950 { color: rgb(46 16 101); }
-html .text-stone-950\/50 { color: rgb(46 16 101 / 50%); }
-html .text-stone-950\/70 { color: rgb(46 16 101 / 70%); }
-html .text-zinc-100 { color: rgb(237 233 254); }
-html .text-zinc-900 { color: rgb(76 29 149); }
-html .text-zinc-950\/70 { color: rgb(46 16 101 / 70%); }
-html .ring-stone-200\/70 { --tw-ring-color: rgb(221 214 254 / 70%); }
-html .ring-stone-400\/30 { --tw-ring-color: rgb(167 139 250 / 30%); }
-html .ring-stone-800\/50 { --tw-ring-color: rgb(91 33 182 / 50%); }
-html .group-hover\:bg-stone-200\/50:is(:where(.group):hover *) { background-color: rgb(221 214 254 / 50%); }
-html .group-hover\:bg-stone-700\/70:is(:where(.group):hover *) { background-color: rgb(109 40 217 / 70%); }
-html .group-hover\:text-stone-950\/70:is(:where(.group):hover *) { color: rgb(46 16 101 / 70%); }
-html .group-hover\/copy-button\:text-stone-500:is(:where(.group\/copy-button):hover *) { color: rgb(139 92 246); }
-html .placeholder\:text-stone-400::placeholder { color: rgb(167 139 250); }
-html .hover\:border-stone-300:hover { border-color: rgb(196 181 253); }
-html .hover\:bg-neutral-100:hover { background-color: rgb(237 233 254); }
-html .hover\:bg-neutral-400:hover { background-color: rgb(167 139 250); }
-html .hover\:bg-neutral-900:hover { background-color: rgb(76 29 149); }
-html .hover\:bg-neutral-950\/5:hover { background-color: rgb(46 16 101 / 5%); }
-html .hover\:bg-stone-50:hover { background-color: rgb(245 243 255); }
-html .hover\:bg-stone-50\/50:hover { background-color: rgb(245 243 255 / 50%); }
-html .hover\:bg-stone-100:hover { background-color: rgb(237 233 254); }
-html .hover\:bg-stone-200\/50:hover { background-color: rgb(221 214 254 / 50%); }
-html .hover\:bg-stone-700\/70:hover { background-color: rgb(109 40 217 / 70%); }
-html .hover\:bg-stone-950\/3:hover { background-color: rgb(46 16 101 / 3%); }
-html .hover\:bg-zinc-950\/5:hover { background-color: rgb(46 16 101 / 5%); }
-html .hover\:bg-zinc-950\/80:hover { background-color: rgb(46 16 101 / 80%); }
-html .hover\:text-stone-600:hover { color: rgb(124 58 237); }
-html .hover\:text-stone-900:hover { color: rgb(76 29 149); }
-html .hover\:text-stone-950\/75:hover { color: rgb(46 16 101 / 75%); }
-html .hover\:text-zinc-950:hover { color: rgb(46 16 101); }
-html .hover\:ring-stone-400\/60:hover { --tw-ring-color: rgb(167 139 250 / 60%); }
-html .focus\:bg-stone-950\/5:focus { background-color: rgb(46 16 101 / 5%); }
-html .focus\:text-stone-950\/75:focus { color: rgb(46 16 101 / 75%); }
-html .active\:bg-neutral-400:active { background-color: rgb(167 139 250); }
-html :where(.codeblock-dark) .in-\[\.codeblock-dark\]\:bg-neutral-600 { background-color: rgb(124 58 237); }
-html :where(.codeblock-dark) .in-\[\.codeblock-dark\]\:bg-neutral-800 { background-color: rgb(91 33 182); }
-html :where(.codeblock-dark) .in-\[\.codeblock-dark\]\:hover\:bg-neutral-500:hover { background-color: rgb(139 92 246); }
-html :where(.codeblock-dark) .in-\[\.codeblock-dark\]\:active\:bg-neutral-500:active { background-color: rgb(139 92 246); }
-html .aria-expanded\:bg-neutral-900[aria-expanded=true] { background-color: rgb(76 29 149); }
-html .dark\:border-neutral-700:is(.dark *) { border-color: rgb(109 40 217); }
-html .dark\:border-neutral-800:is(.dark *) { border-color: rgb(91 33 182); }
-html .dark\:border-stone-400\/50:is(.dark *) { border-color: rgb(167 139 250 / 50%); }
-html .dark\:border-stone-500\/30:is(.dark *) { border-color: rgb(139 92 246 / 30%); }
-html .dark\:border-stone-700:is(.dark *) { border-color: rgb(109 40 217); }
-html .dark\:border-stone-800:is(.dark *) { border-color: rgb(91 33 182); }
-html .dark\:border-stone-800\/50:is(.dark *) { border-color: rgb(91 33 182 / 50%); }
-html .dark\:border-stone-900:is(.dark *) { border-color: rgb(76 29 149); }
-html .dark\:border-zinc-500\/30:is(.dark *) { border-color: rgb(139 92 246 / 30%); }
-html .dark\:border-zinc-800:is(.dark *) { border-color: rgb(91 33 182); }
-html .dark\:bg-neutral-300:is(.dark *) { background-color: rgb(196 181 253); }
-html .dark\:bg-neutral-600:is(.dark *) { background-color: rgb(124 58 237); }
-html .dark\:bg-neutral-800:is(.dark *) { background-color: rgb(91 33 182); }
-html .dark\:bg-neutral-900\/45:is(.dark *) { background-color: rgb(76 29 149 / 45%); }
-html .dark\:bg-stone-50:is(.dark *) { background-color: rgb(245 243 255); }
-html .dark\:bg-stone-100:is(.dark *) { background-color: rgb(237 233 254); }
-html .dark\:bg-stone-200:is(.dark *) { background-color: rgb(221 214 254); }
-html .dark\:bg-stone-400:is(.dark *) { background-color: rgb(167 139 250); }
-html .dark\:bg-stone-500\/10:is(.dark *) { background-color: rgb(139 92 246 / 10%); }
-html .dark\:bg-stone-800:is(.dark *) { background-color: rgb(91 33 182); }
-html .dark\:bg-stone-800\/25:is(.dark *) { background-color: rgb(91 33 182 / 25%); }
-html .dark\:bg-stone-900:is(.dark *) { background-color: rgb(76 29 149); }
-html .dark\:bg-stone-950:is(.dark *) { background-color: rgb(46 16 101); }
-html .dark\:bg-zinc-500:is(.dark *) { background-color: rgb(139 92 246); }
-html .dark\:bg-zinc-500\/10:is(.dark *) { background-color: rgb(139 92 246 / 10%); }
-html .dark\:bg-zinc-900:is(.dark *) { background-color: rgb(76 29 149); }
-html .dark\:fill-stone-100:is(.dark *) { fill: rgb(237 233 254); }
-html .dark\:fill-stone-300:is(.dark *) { fill: rgb(196 181 253); }
-html .dark\:text-neutral-300:is(.dark *) { color: rgb(196 181 253); }
-html .dark\:text-stone-50:is(.dark *) { color: rgb(245 243 255); }
-html .dark\:text-stone-100:is(.dark *) { color: rgb(237 233 254); }
-html .dark\:text-stone-200:is(.dark *) { color: rgb(221 214 254); }
-html .dark\:text-stone-300:is(.dark *) { color: rgb(196 181 253); }
-html .dark\:text-stone-400:is(.dark *) { color: rgb(167 139 250); }
-html .dark\:text-stone-500:is(.dark *) { color: rgb(139 92 246); }
-html .dark\:text-stone-600:is(.dark *) { color: rgb(124 58 237); }
-html .dark\:text-zinc-200:is(.dark *) { color: rgb(221 214 254); }
-html .dark\:ring-stone-700\/25:is(.dark *) { --tw-ring-color: rgb(109 40 217 / 25%); }
-html .dark\:ring-stone-800\/50:is(.dark *) { --tw-ring-color: rgb(91 33 182 / 50%); }
-html .dark\:group-hover\:bg-stone-700\/70:is(.dark *):is(:where(.group):hover *) { background-color: rgb(109 40 217 / 70%); }
-html .dark\:hover\:border-stone-700:is(.dark *):hover { border-color: rgb(109 40 217); }
-html .dark\:hover\:bg-neutral-100:is(.dark *):hover { background-color: rgb(237 233 254); }
-html .dark\:hover\:bg-neutral-500:is(.dark *):hover { background-color: rgb(139 92 246); }
-html .dark\:hover\:bg-neutral-900:is(.dark *):hover { background-color: rgb(76 29 149); }
-html .dark\:hover\:bg-neutral-900\/55:is(.dark *):hover { background-color: rgb(76 29 149 / 55%); }
-html .dark\:hover\:bg-stone-700\/70:is(.dark *):hover { background-color: rgb(109 40 217 / 70%); }
-html .dark\:hover\:bg-stone-800:is(.dark *):hover { background-color: rgb(91 33 182); }
-html .dark\:hover\:bg-stone-900:is(.dark *):hover { background-color: rgb(76 29 149); }
-html .hover\:dark\:bg-stone-800:hover:is(.dark *) { background-color: rgb(91 33 182); }
-html .dark\:hover\:text-stone-200:is(.dark *):hover { color: rgb(221 214 254); }
-html .dark\:hover\:text-stone-300:is(.dark *):hover { color: rgb(196 181 253); }
-html .dark\:active\:bg-neutral-500:is(.dark *):active { background-color: rgb(139 92 246); }
-html .dark\:active\:bg-neutral-900\/65:is(.dark *):active { background-color: rgb(76 29 149 / 65%); }
-html .dark\:aria-expanded\:bg-neutral-100:is(.dark *)[aria-expanded=true] { background-color: rgb(237 233 254); }
-html .\[\&_\[data-component-part\=card-content\]\]\:text-neutral-800 [data-component-part=card-content] { color: rgb(91 33 182); }
-html .dark\:\[\&_\[data-component-part\=card-content\]\]\:text-neutral-300:is(.dark *) [data-component-part=card-content] { color: rgb(196 181 253); }
-html .\[\&_\[data-component-part\=card-icon\]\]\:fill-neutral-800 [data-component-part=card-icon] { fill: rgb(91 33 182); }
-html .\[\&_\[data-component-part\=card-icon\]\]\:text-neutral-800 [data-component-part=card-icon] { color: rgb(91 33 182); }
-html .dark\:\[\&_\[data-component-part\=card-icon\]\]\:fill-neutral-300:is(.dark *) [data-component-part=card-icon] { fill: rgb(196 181 253); }
-html .dark\:\[\&_\[data-component-part\=card-icon\]\]\:text-neutral-300:is(.dark *) [data-component-part=card-icon] { color: rgb(196 181 253); }
-html .\[\&_\[data-component-part\=card-title\]\]\:text-neutral-900 [data-component-part=card-title] { color: rgb(76 29 149); }
-html .dark\:\[\&_\[data-component-part\=card-title\]\]\:text-neutral-100:is(.dark *) [data-component-part=card-title] { color: rgb(237 233 254); }
-html .\[\&_kbd\]\:bg-stone-100 kbd { background-color: rgb(237 233 254); }
-html .dark\:\[\&_kbd\]\:bg-stone-800:is(.dark *) kbd { background-color: rgb(91 33 182); }
+html .border-neutral-200 { border-color: rgb(153 246 228); }
+html .border-stone-50 { border-color: rgb(240 253 250); }
+html .border-stone-100 { border-color: rgb(204 251 241); }
+html .border-stone-200 { border-color: rgb(153 246 228); }
+html .border-stone-200\/70 { border-color: rgb(153 246 228 / 70%); }
+html .border-stone-500\/20 { border-color: rgb(20 184 166 / 20%); }
+html .border-stone-600\/50 { border-color: rgb(13 148 136 / 50%); }
+html .border-stone-950\/10 { border-color: rgb(4 47 46 / 10%); }
+html .border-zinc-100 { border-color: rgb(204 251 241); }
+html .border-zinc-200 { border-color: rgb(153 246 228); }
+html .border-zinc-500\/20 { border-color: rgb(20 184 166 / 20%); }
+html .bg-neutral-50 { background-color: rgb(240 253 250); }
+html .bg-neutral-200 { background-color: rgb(153 246 228); }
+html .bg-neutral-300 { background-color: rgb(94 234 212); }
+html .bg-neutral-800 { background-color: rgb(17 94 89); }
+html .bg-stone-50 { background-color: rgb(240 253 250); }
+html .bg-stone-50\/50 { background-color: rgb(240 253 250 / 50%); }
+html .bg-stone-100 { background-color: rgb(204 251 241); }
+html .bg-stone-100\/50 { background-color: rgb(204 251 241 / 50%); }
+html .bg-stone-200 { background-color: rgb(153 246 228); }
+html .bg-stone-200\/70 { background-color: rgb(153 246 228 / 70%); }
+html .bg-stone-400 { background-color: rgb(45 212 191); }
+html .bg-stone-500 { background-color: rgb(20 184 166); }
+html .bg-stone-700 { background-color: rgb(15 118 110); }
+html .bg-stone-800 { background-color: rgb(17 94 89); }
+html .bg-stone-900 { background-color: rgb(19 78 74); }
+html .bg-stone-950\/5 { background-color: rgb(4 47 46 / 5%); }
+html .bg-zinc-50\/50 { background-color: rgb(240 253 250 / 50%); }
+html .bg-zinc-100 { background-color: rgb(204 251 241); }
+html .bg-zinc-400 { background-color: rgb(45 212 191); }
+html .bg-zinc-950\/90 { background-color: rgb(4 47 46 / 90%); }
+html .fill-stone-400 { fill: rgb(45 212 191); }
+html .fill-stone-800 { fill: rgb(17 94 89); }
+html .text-neutral-800 { color: rgb(17 94 89); }
+html .text-neutral-900 { color: rgb(19 78 74); }
+html .text-stone-50 { color: rgb(240 253 250); }
+html .text-stone-300 { color: rgb(94 234 212); }
+html .text-stone-400 { color: rgb(45 212 191); }
+html .text-stone-500 { color: rgb(20 184 166); }
+html .text-stone-600 { color: rgb(13 148 136); }
+html .text-stone-700 { color: rgb(15 118 110); }
+html .text-stone-800 { color: rgb(17 94 89); }
+html .text-stone-900 { color: rgb(19 78 74); }
+html .text-stone-950 { color: rgb(4 47 46); }
+html .text-stone-950\/50 { color: rgb(4 47 46 / 50%); }
+html .text-stone-950\/70 { color: rgb(4 47 46 / 70%); }
+html .text-zinc-100 { color: rgb(204 251 241); }
+html .text-zinc-900 { color: rgb(19 78 74); }
+html .text-zinc-950\/70 { color: rgb(4 47 46 / 70%); }
+html .ring-stone-200\/70 { --tw-ring-color: rgb(153 246 228 / 70%); }
+html .ring-stone-400\/30 { --tw-ring-color: rgb(45 212 191 / 30%); }
+html .ring-stone-800\/50 { --tw-ring-color: rgb(17 94 89 / 50%); }
+html .group-hover\:bg-stone-200\/50:is(:where(.group):hover *) { background-color: rgb(153 246 228 / 50%); }
+html .group-hover\:bg-stone-700\/70:is(:where(.group):hover *) { background-color: rgb(15 118 110 / 70%); }
+html .group-hover\:text-stone-950\/70:is(:where(.group):hover *) { color: rgb(4 47 46 / 70%); }
+html .group-hover\/copy-button\:text-stone-500:is(:where(.group\/copy-button):hover *) { color: rgb(20 184 166); }
+html .placeholder\:text-stone-400::placeholder { color: rgb(45 212 191); }
+html .hover\:border-stone-300:hover { border-color: rgb(94 234 212); }
+html .hover\:bg-neutral-100:hover { background-color: rgb(204 251 241); }
+html .hover\:bg-neutral-400:hover { background-color: rgb(45 212 191); }
+html .hover\:bg-neutral-900:hover { background-color: rgb(19 78 74); }
+html .hover\:bg-neutral-950\/5:hover { background-color: rgb(4 47 46 / 5%); }
+html .hover\:bg-stone-50:hover { background-color: rgb(240 253 250); }
+html .hover\:bg-stone-50\/50:hover { background-color: rgb(240 253 250 / 50%); }
+html .hover\:bg-stone-100:hover { background-color: rgb(204 251 241); }
+html .hover\:bg-stone-200\/50:hover { background-color: rgb(153 246 228 / 50%); }
+html .hover\:bg-stone-700\/70:hover { background-color: rgb(15 118 110 / 70%); }
+html .hover\:bg-stone-950\/3:hover { background-color: rgb(4 47 46 / 3%); }
+html .hover\:bg-zinc-950\/5:hover { background-color: rgb(4 47 46 / 5%); }
+html .hover\:bg-zinc-950\/80:hover { background-color: rgb(4 47 46 / 80%); }
+html .hover\:text-stone-600:hover { color: rgb(13 148 136); }
+html .hover\:text-stone-900:hover { color: rgb(19 78 74); }
+html .hover\:text-stone-950\/75:hover { color: rgb(4 47 46 / 75%); }
+html .hover\:text-zinc-950:hover { color: rgb(4 47 46); }
+html .hover\:ring-stone-400\/60:hover { --tw-ring-color: rgb(45 212 191 / 60%); }
+html .focus\:bg-stone-950\/5:focus { background-color: rgb(4 47 46 / 5%); }
+html .focus\:text-stone-950\/75:focus { color: rgb(4 47 46 / 75%); }
+html .active\:bg-neutral-400:active { background-color: rgb(45 212 191); }
+html :where(.codeblock-dark) .in-\[\.codeblock-dark\]\:bg-neutral-600 { background-color: rgb(13 148 136); }
+html :where(.codeblock-dark) .in-\[\.codeblock-dark\]\:bg-neutral-800 { background-color: rgb(17 94 89); }
+html :where(.codeblock-dark) .in-\[\.codeblock-dark\]\:hover\:bg-neutral-500:hover { background-color: rgb(20 184 166); }
+html :where(.codeblock-dark) .in-\[\.codeblock-dark\]\:active\:bg-neutral-500:active { background-color: rgb(20 184 166); }
+html .aria-expanded\:bg-neutral-900[aria-expanded=true] { background-color: rgb(19 78 74); }
+html .dark\:border-neutral-700:is(.dark *) { border-color: rgb(15 118 110); }
+html .dark\:border-neutral-800:is(.dark *) { border-color: rgb(17 94 89); }
+html .dark\:border-stone-400\/50:is(.dark *) { border-color: rgb(45 212 191 / 50%); }
+html .dark\:border-stone-500\/30:is(.dark *) { border-color: rgb(20 184 166 / 30%); }
+html .dark\:border-stone-700:is(.dark *) { border-color: rgb(15 118 110); }
+html .dark\:border-stone-800:is(.dark *) { border-color: rgb(17 94 89); }
+html .dark\:border-stone-800\/50:is(.dark *) { border-color: rgb(17 94 89 / 50%); }
+html .dark\:border-stone-900:is(.dark *) { border-color: rgb(19 78 74); }
+html .dark\:border-zinc-500\/30:is(.dark *) { border-color: rgb(20 184 166 / 30%); }
+html .dark\:border-zinc-800:is(.dark *) { border-color: rgb(17 94 89); }
+html .dark\:bg-neutral-300:is(.dark *) { background-color: rgb(94 234 212); }
+html .dark\:bg-neutral-600:is(.dark *) { background-color: rgb(13 148 136); }
+html .dark\:bg-neutral-800:is(.dark *) { background-color: rgb(17 94 89); }
+html .dark\:bg-neutral-900\/45:is(.dark *) { background-color: rgb(19 78 74 / 45%); }
+html .dark\:bg-stone-50:is(.dark *) { background-color: rgb(240 253 250); }
+html .dark\:bg-stone-100:is(.dark *) { background-color: rgb(204 251 241); }
+html .dark\:bg-stone-200:is(.dark *) { background-color: rgb(153 246 228); }
+html .dark\:bg-stone-400:is(.dark *) { background-color: rgb(45 212 191); }
+html .dark\:bg-stone-500\/10:is(.dark *) { background-color: rgb(20 184 166 / 10%); }
+html .dark\:bg-stone-800:is(.dark *) { background-color: rgb(17 94 89); }
+html .dark\:bg-stone-800\/25:is(.dark *) { background-color: rgb(17 94 89 / 25%); }
+html .dark\:bg-stone-900:is(.dark *) { background-color: rgb(19 78 74); }
+html .dark\:bg-stone-950:is(.dark *) { background-color: rgb(4 47 46); }
+html .dark\:bg-zinc-500:is(.dark *) { background-color: rgb(20 184 166); }
+html .dark\:bg-zinc-500\/10:is(.dark *) { background-color: rgb(20 184 166 / 10%); }
+html .dark\:bg-zinc-900:is(.dark *) { background-color: rgb(19 78 74); }
+html .dark\:fill-stone-100:is(.dark *) { fill: rgb(204 251 241); }
+html .dark\:fill-stone-300:is(.dark *) { fill: rgb(94 234 212); }
+html .dark\:text-neutral-300:is(.dark *) { color: rgb(94 234 212); }
+html .dark\:text-stone-50:is(.dark *) { color: rgb(240 253 250); }
+html .dark\:text-stone-100:is(.dark *) { color: rgb(204 251 241); }
+html .dark\:text-stone-200:is(.dark *) { color: rgb(153 246 228); }
+html .dark\:text-stone-300:is(.dark *) { color: rgb(94 234 212); }
+html .dark\:text-stone-400:is(.dark *) { color: rgb(45 212 191); }
+html .dark\:text-stone-500:is(.dark *) { color: rgb(20 184 166); }
+html .dark\:text-stone-600:is(.dark *) { color: rgb(13 148 136); }
+html .dark\:text-zinc-200:is(.dark *) { color: rgb(153 246 228); }
+html .dark\:ring-stone-700\/25:is(.dark *) { --tw-ring-color: rgb(15 118 110 / 25%); }
+html .dark\:ring-stone-800\/50:is(.dark *) { --tw-ring-color: rgb(17 94 89 / 50%); }
+html .dark\:group-hover\:bg-stone-700\/70:is(.dark *):is(:where(.group):hover *) { background-color: rgb(15 118 110 / 70%); }
+html .dark\:hover\:border-stone-700:is(.dark *):hover { border-color: rgb(15 118 110); }
+html .dark\:hover\:bg-neutral-100:is(.dark *):hover { background-color: rgb(204 251 241); }
+html .dark\:hover\:bg-neutral-500:is(.dark *):hover { background-color: rgb(20 184 166); }
+html .dark\:hover\:bg-neutral-900:is(.dark *):hover { background-color: rgb(19 78 74); }
+html .dark\:hover\:bg-neutral-900\/55:is(.dark *):hover { background-color: rgb(19 78 74 / 55%); }
+html .dark\:hover\:bg-stone-700\/70:is(.dark *):hover { background-color: rgb(15 118 110 / 70%); }
+html .dark\:hover\:bg-stone-800:is(.dark *):hover { background-color: rgb(17 94 89); }
+html .dark\:hover\:bg-stone-900:is(.dark *):hover { background-color: rgb(19 78 74); }
+html .hover\:dark\:bg-stone-800:hover:is(.dark *) { background-color: rgb(17 94 89); }
+html .dark\:hover\:text-stone-200:is(.dark *):hover { color: rgb(153 246 228); }
+html .dark\:hover\:text-stone-300:is(.dark *):hover { color: rgb(94 234 212); }
+html .dark\:active\:bg-neutral-500:is(.dark *):active { background-color: rgb(20 184 166); }
+html .dark\:active\:bg-neutral-900\/65:is(.dark *):active { background-color: rgb(19 78 74 / 65%); }
+html .dark\:aria-expanded\:bg-neutral-100:is(.dark *)[aria-expanded=true] { background-color: rgb(204 251 241); }
+html .\[\&_\[data-component-part\=card-content\]\]\:text-neutral-800 [data-component-part=card-content] { color: rgb(17 94 89); }
+html .dark\:\[\&_\[data-component-part\=card-content\]\]\:text-neutral-300:is(.dark *) [data-component-part=card-content] { color: rgb(94 234 212); }
+html .\[\&_\[data-component-part\=card-icon\]\]\:fill-neutral-800 [data-component-part=card-icon] { fill: rgb(17 94 89); }
+html .\[\&_\[data-component-part\=card-icon\]\]\:text-neutral-800 [data-component-part=card-icon] { color: rgb(17 94 89); }
+html .dark\:\[\&_\[data-component-part\=card-icon\]\]\:fill-neutral-300:is(.dark *) [data-component-part=card-icon] { fill: rgb(94 234 212); }
+html .dark\:\[\&_\[data-component-part\=card-icon\]\]\:text-neutral-300:is(.dark *) [data-component-part=card-icon] { color: rgb(94 234 212); }
+html .\[\&_\[data-component-part\=card-title\]\]\:text-neutral-900 [data-component-part=card-title] { color: rgb(19 78 74); }
+html .dark\:\[\&_\[data-component-part\=card-title\]\]\:text-neutral-100:is(.dark *) [data-component-part=card-title] { color: rgb(204 251 241); }
+html .\[\&_kbd\]\:bg-stone-100 kbd { background-color: rgb(204 251 241); }
+html .dark\:\[\&_kbd\]\:bg-stone-800:is(.dark *) kbd { background-color: rgb(17 94 89); }

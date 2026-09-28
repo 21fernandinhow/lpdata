@@ -1,58 +1,58 @@
 /*
- * Paleta monocromática (medium-purple).
+ * Paleta monocromática (keppel/teal).
  * O Mintlify deriva textos, bordas e superfícies da escala --gray-*;
  * o conteúdo dos artigos usa as variáveis --tw-prose-* do Tailwind Typography.
  */
 
 html:root {
-  --gray-50: 245 243 255;
-  --gray-100: 237 233 254;
-  --gray-200: 221 214 254;
-  --gray-300: 196 181 253;
-  --gray-400: 167 139 250;
-  --gray-500: 139 92 246;
-  --gray-600: 124 58 237;
-  --gray-700: 109 40 217;
-  --gray-800: 91 33 182;
-  --gray-900: 76 29 149;
-  --gray-950: 46 16 101;
+  --gray-50: 240 253 250;
+  --gray-100: 204 251 241;
+  --gray-200: 153 246 228;
+  --gray-300: 94 234 212;
+  --gray-400: 45 212 191;
+  --gray-500: 20 184 166;
+  --gray-600: 13 148 136;
+  --gray-700: 15 118 110;
+  --gray-800: 17 94 89;
+  --gray-900: 19 78 74;
+  --gray-950: 4 47 46;
 }
 
 html .prose,
 html .prose-gray {
   /* Tema claro */
-  --tw-prose-body: #2e1065;
-  --tw-prose-headings: #4c1d95;
-  --tw-prose-lead: #4c1d95;
-  --tw-prose-links: #6d28d9;
-  --tw-prose-bold: #2e1065;
-  --tw-prose-counters: #6d28d9;
-  --tw-prose-bullets: #a78bfa;
-  --tw-prose-hr: #ddd6fe;
-  --tw-prose-quotes: #2e1065;
-  --tw-prose-quote-borders: #c4b5fd;
-  --tw-prose-captions: #5b21b6;
-  --tw-prose-kbd: #2e1065;
-  --tw-prose-code: #4c1d95;
-  --tw-prose-th-borders: #c4b5fd;
-  --tw-prose-td-borders: #ddd6fe;
+  --tw-prose-body: #042f2e;
+  --tw-prose-headings: #134e4a;
+  --tw-prose-lead: #134e4a;
+  --tw-prose-links: #0f766e;
+  --tw-prose-bold: #042f2e;
+  --tw-prose-counters: #0f766e;
+  --tw-prose-bullets: #2dd4bf;
+  --tw-prose-hr: #99f6e4;
+  --tw-prose-quotes: #042f2e;
+  --tw-prose-quote-borders: #5eead4;
+  --tw-prose-captions: #115e59;
+  --tw-prose-kbd: #042f2e;
+  --tw-prose-code: #134e4a;
+  --tw-prose-th-borders: #5eead4;
+  --tw-prose-td-borders: #99f6e4;
 
   /* Tema escuro (aplicado por dark:prose-invert) */
-  --tw-prose-invert-body: #ddd6fe;
-  --tw-prose-invert-headings: #f5f3ff;
-  --tw-prose-invert-lead: #ddd6fe;
-  --tw-prose-invert-links: #a78bfa;
-  --tw-prose-invert-bold: #f5f3ff;
-  --tw-prose-invert-counters: #a78bfa;
-  --tw-prose-invert-bullets: #6d28d9;
-  --tw-prose-invert-hr: #4c1d95;
-  --tw-prose-invert-quotes: #ede9fe;
-  --tw-prose-invert-quote-borders: #5b21b6;
-  --tw-prose-invert-captions: #c4b5fd;
-  --tw-prose-invert-kbd: #f5f3ff;
-  --tw-prose-invert-code: #ddd6fe;
-  --tw-prose-invert-th-borders: #5b21b6;
-  --tw-prose-invert-td-borders: #4c1d95;
+  --tw-prose-invert-body: #80b2ad;
+  --tw-prose-invert-headings: #99f6e4;
+  --tw-prose-invert-lead: #99f6e4;
+  --tw-prose-invert-links: #2dd4bf;
+  --tw-prose-invert-bold: #99f6e4;
+  --tw-prose-invert-counters: #2dd4bf;
+  --tw-prose-invert-bullets: #0f766e;
+  --tw-prose-invert-hr: #134e4a;
+  --tw-prose-invert-quotes: #ccfbf1;
+  --tw-prose-invert-quote-borders: #115e59;
+  --tw-prose-invert-captions: #5eead4;
+  --tw-prose-invert-kbd: #f0fdfa;
+  --tw-prose-invert-code: #99f6e4;
+  --tw-prose-invert-th-borders: #115e59;
+  --tw-prose-invert-td-borders: #134e4a;
 }
 
 /*
@@ -62,73 +62,73 @@ html .prose-gray {
  */
 html .prose:not(.callout *),
 html .prose :is(p, li, td, blockquote, strong):not(.callout *) {
-  color: #2e1065;
+  color: #042f2e;
 }
 
 html .prose :is(h1, h2, h3, h4, h5, h6, thead th):not(.callout *),
 html #page-title {
-  color: #4c1d95;
+  color: #134e4a;
 }
 
 html.dark .prose:not(.callout *),
 html.dark .prose :is(p, li, td, blockquote):not(.callout *) {
-  color: #ddd6fe;
+  color: #80b2ad;
 }
 
 html.dark .prose :is(strong, h1, h2, h3, h4, h5, h6, thead th):not(.callout *),
 html.dark #page-title {
-  color: #f5f3ff;
+  color: #99f6e4;
 }
 
 /* Branco e preto do Tailwind */
 html:root {
-  --color-white: #f5f3ff;
-  --color-black: #0e0420;
+  --color-white: #f0fdfa;
+  --color-black: #011110;
 }
 
 /* Blocos de código: fundo e texto padrão (o realce de sintaxe é mantido) */
 html:not(.dark) [data-component-part="code-block-root"],
 html:not(.dark) .code-block-background,
 html:not(.dark) pre.shiki {
-  background-color: #ede9fe !important;
+  background-color: #ccfbf1 !important;
 }
 
 html [style*="--shiki-dark-bg"] {
-  --shiki-dark-bg: #0e0420 !important;
+  --shiki-dark-bg: #011110 !important;
 }
 
 html .bg-codeblock,
 html.dark .dark\:bg-codeblock {
-  background-color: #0e0420;
+  background-color: #011110;
 }
 
 html.dark .dark\:bg-codeblock\/50 {
-  background-color: rgb(14 4 32 / 50%);
+  background-color: rgb(1 17 16 / 50%);
 }
 
 html:not(.dark) .shiki[style*="color:#1F2328" i],
 html:not(.dark) .shiki [style*="color:#1F2328" i],
 html:not(.dark) [data-component-part="code-block-root"][style*="color:#1F2328" i] {
-  color: #2e1065 !important;
+  color: #042f2e !important;
 }
 
 html [style*="--shiki-dark:#D4D4D4" i] {
-  --shiki-dark: #ede9fe !important;
+  --shiki-dark: #ccfbf1 !important;
 }
 
 /* Badges neutros */
 html [data-badge][data-color="gray"] {
-  --color-bg: #ddd6fe !important;
-  --color-text: #4c1d95 !important;
+  --color-bg: #99f6e4 !important;
+  --color-text: #134e4a !important;
 }
 
 html.dark [data-badge][data-color="gray"] {
-  --color-bg: #4c1d95 !important;
-  --color-text: #ddd6fe !important;
+  --color-bg: #134e4a !important;
+  --color-text: #99f6e4 !important;
 }
 
 ::selection {
-  background-color: rgb(167 139 250 / 35%);
+  background-color: rgb(45 212 191 / 35%);
 }
 
 /*
@@ -137,20 +137,25 @@ html.dark [data-badge][data-color="gray"] {
  */
 html #sidebar-content a:not([aria-current="page"]),
 html #table-of-contents li:not([data-active]) > a {
-  color: #2e1065;
+  color: #042f2e;
 }
 
 html #sidebar-content a:not([aria-current="page"]):hover,
 html #table-of-contents li:not([data-active]) > a:hover {
-  color: #6d28d9;
+  color: #0f766e;
 }
 
 html.dark #sidebar-content a:not([aria-current="page"]),
 html.dark #table-of-contents li:not([data-active]) > a {
-  color: #ddd6fe;
+  color: #80b2ad;
 }
 
 html.dark #sidebar-content a:not([aria-current="page"]):hover,
 html.dark #table-of-contents li:not([data-active]) > a:hover {
-  color: #f5f3ff;
+  color: #99f6e4;
+}
+
+/* Título "Na página" do sumário no tom dos títulos */
+html.dark #table-of-contents .dark\:text-gray-300 {
+  color: #99f6e4;
 }
