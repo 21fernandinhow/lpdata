@@ -1,0 +1,55 @@
+---
+title: LPData
+description: Plataforma para gerenciar e servir o conteúdo de landing pages via API.
+---
+
+# Gerencie e sirva o conteúdo das suas landing pages em republicar seu frontend
+
+O LPData é uma plataforma para **gerenciar e servir o conteúdo de landing pages por uma API**. Seu frontend cuida do layout; o LPData guarda os textos, links, números e arquivos que aparecem na página. Para mudar o conteúdo, você atualiza o LPData, sem alterar o código nem publicar o site de novo.
+
+## Como funciona
+
+<Steps>
+  <Step title="Estruture o conteúdo">
+    Crie uma Landing Page e envie seu Documento de Conteúdo: um JSON com a estrutura que seu frontend espera, em que cada valor é um Campo Editável com `value` e `type`.
+  </Step>
+  <Step title="Hospede seus arquivos">
+    Envie imagens e outros arquivos como Assets e use as URLs retornadas no documento.
+  </Step>
+  <Step title="Sirva o conteúdo">
+    Seu frontend busca o documento em `GET https://api.lpdata.io/landing_pages/<public_id>`, sem autenticação, e renderiza a página.
+  </Step>
+  <Step title="Atualize quando quiser">
+    Altere o documento pela API autenticada. A próxima leitura já entrega o novo conteúdo.
+  </Step>
+</Steps>
+
+## O que o LPData faz e o que fica com você
+
+| LPData | Sua aplicação |
+| --- | --- |
+| Armazena o Documento de Conteúdo de cada Landing Page | Define a estrutura do documento e como apresentá-lo |
+| Hospeda os Assets usados no conteúdo | Renderiza layout, estilos e interações |
+| Serve o conteúdo publicamente pelo Identificador Público | Busca o conteúdo e monta a página |
+| Autentica quem gerencia o conteúdo | Oferece a experiência de edição, se precisar de uma |
+
+O LPData é exclusivamente uma API: não tem editor visual nem hospeda páginas.
+
+## Comece por aqui
+
+<CardGroup cols={2}>
+  <Card title="Primeiros passos" icon="rocket" href="/quickstart">
+    Crie uma conta, publique uma Landing Page e leia o conteúdo em poucos minutos.
+  </Card>
+  <Card title="Autenticação" icon="key" href="/authentication">
+    Cadastro, login e ciclo de vida dos tokens.
+  </Card>
+  <Card title="Landing Pages" icon="file-lines" href="/landing-pages">
+    Documento de Conteúdo, hosts permitidos e leitura pública.
+  </Card>
+  <Card title="Assets" icon="image" href="/assets">
+    Envio e gerenciamento de arquivos para o conteúdo.
+  </Card>
+</CardGroup>
+
+Procurando a lista completa de endpoints? Veja a [Referência da API](/api-reference).
