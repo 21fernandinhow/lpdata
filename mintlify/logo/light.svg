@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288 90">
+  <!-- Moldura de apresentação / frontend -->
+  <rect x="1" y="1" width="88" height="88" rx="14" fill="#14b8a6" fill-opacity="0.12" stroke="#0d9488" stroke-width="2" stroke-dasharray="6 4"/>
+  <!-- Bloco central de dados -->
+  <rect x="22" y="22" width="46" height="46" rx="10" fill="#14b8a6"/>
+  <!-- Brackets JSON -->
+  <path d="M37 39L31 45L37 51 M53 39L59 45L53 51" stroke="#f0fdfa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Ponto de conexão / asset -->
+  <circle cx="72" cy="18" r="6" fill="#0d9488"/>
+  <text x="110" y="63" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="50" fill="#042f2e" letter-spacing="-0.5">LP<tspan fill="#0f766e">Data</tspan></text>
+</svg>
