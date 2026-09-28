@@ -83,7 +83,7 @@ html.dark #page-title {
 /* Branco e preto do Tailwind */
 html:root {
   --color-white: #f0fdfa;
-  --color-black: #011110;
+  --color-black: #000807;
 }
 
 /* Blocos de código: fundo e texto padrão (o realce de sintaxe é mantido) */
@@ -94,16 +94,16 @@ html:not(.dark) pre.shiki {
 }
 
 html [style*="--shiki-dark-bg"] {
-  --shiki-dark-bg: #011110 !important;
+  --shiki-dark-bg: #03201f !important;
 }
 
 html .bg-codeblock,
 html.dark .dark\:bg-codeblock {
-  background-color: #011110;
+  background-color: #03201f;
 }
 
 html.dark .dark\:bg-codeblock\/50 {
-  background-color: rgb(1 17 16 / 50%);
+  background-color: rgb(3 32 31 / 50%);
 }
 
 html:not(.dark) .shiki[style*="color:#1F2328" i],
