@@ -2,6 +2,12 @@
 
 API Rails para gerenciar landing pages, documentos de conteudo e assets.
 
+## Documentacao
+
+A documentacao publica da API, em portugues e ingles, esta em
+[lpdata.io](https://lpdata.io). As paginas ficam em `mintlify/` e sao
+publicadas pelo Mintlify a partir deste repositorio.
+
 ## Desenvolvimento local
 
 Requisitos: Ruby na versao indicada em `.ruby-version` e PostgreSQL.
