@@ -4,11 +4,13 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
     origins(*origins)
 
-    resource "/api/*",
-      headers: %w[Authorization Content-Type],
-      methods: %i[get post delete options],
-      expose: %w[Authorization],
-      max_age: 600
+    %w[/auth/* /manage/* /assets /assets/*].each do |path|
+      resource path,
+        headers: %w[Authorization Content-Type],
+        methods: %i[get post patch delete options],
+        expose: %w[Authorization],
+        max_age: 600
+    end
   end
 
   allow do

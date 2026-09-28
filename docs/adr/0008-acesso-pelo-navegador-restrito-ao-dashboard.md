@@ -1,0 +1,3 @@
+# Acesso pelo navegador restrito ao dashboard
+
+Pelo navegador, somente a leitura pública do Documento de Conteúdo aceita qualquer origem. As rotas autenticadas de autenticação, gerenciamento de Landing Pages e Assets aceitam chamadas cross-origin apenas das origens configuradas em `LPDATA_CORS_ORIGINS`, que em produção é o dashboard (`https://dashboard.lpdata.io`). Fora do navegador, CORS não se aplica: servidores, APIs de terceiros, ferramentas de linha de comando e futuras integrações via MCP usam as rotas autenticadas com um token Bearer. Isso mantém a API aberta para integrações server-to-server sem expor as operações de escrita a páginas web arbitrárias.

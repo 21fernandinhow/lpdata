@@ -1,4 +1,5 @@
 ENV["RAILS_ENV"] ||= "test"
+ENV["LPDATA_CORS_ORIGINS"] ||= "https://app.example.com"
 require_relative "../config/environment"
 require "rails/test_help"
 

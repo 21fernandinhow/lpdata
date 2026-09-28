@@ -9,6 +9,12 @@ Criar e gerenciar Landing Pages e Assets exige uma conta. O login retorna um tok
 
 Todos os endpoints partem de `https://api.lpdata.io`. Não grave tokens em código-fonte público nem os compartilhe.
 
+## Onde chamar as rotas autenticadas
+
+Chame as rotas de autenticação, de Landing Pages e de Assets a partir de um servidor: seu backend, scripts, outras APIs ou ferramentas como curl. Pelo navegador, essas rotas só aceitam chamadas do dashboard do LPData; o navegador bloqueia a mesma chamada feita pelo JavaScript de outros sites.
+
+A [leitura pública do conteúdo](/public-content) é a exceção: ela aceita chamadas do navegador vindas de qualquer origem.
+
 ## Criar uma conta
 
 `POST /auth/sign_up` recebe os dados da conta dentro de `user`:

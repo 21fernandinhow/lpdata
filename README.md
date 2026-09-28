@@ -36,7 +36,13 @@ Configure estas variaveis no servico da aplicacao:
 RAILS_ENV=production
 SECRET_KEY_BASE=<uma chave aleatoria longa>
 DEVISE_JWT_SECRET_KEY=<outra chave aleatoria longa>
+LPDATA_CORS_ORIGINS=https://dashboard.lpdata.io
 ```
+
+`LPDATA_CORS_ORIGINS` lista, separadas por virgula, as origens que podem
+chamar as rotas autenticadas pelo navegador. Em producao, somente o dashboard.
+A leitura publica aceita qualquer origem, e chamadas fora do navegador nao
+dependem dessa variavel (veja o ADR 0008).
 
 O Railway fornece `DATABASE_URL` automaticamente quando o PostgreSQL esta
 conectado ao servico. Gere as duas chaves localmente com `bin/rails secret` e

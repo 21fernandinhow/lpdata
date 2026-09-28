@@ -9,6 +9,12 @@ Creating and managing Landing Pages and Assets requires an account. Signing in r
 
 Every endpoint starts from `https://api.lpdata.io`. Do not store tokens in public source code or share them.
 
+## Where to call authenticated routes
+
+Call the authentication, Landing Page, and Asset routes from a server: your backend, scripts, other APIs, or tools such as curl. From the browser, these routes only accept calls from the LPData dashboard; the browser blocks the same call made by JavaScript on other sites.
+
+[Public content reads](/en/public-content) are the exception: they accept browser calls from any origin.
+
 ## Create an account
 
 `POST /auth/sign_up` accepts account details inside `user`:
