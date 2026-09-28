@@ -7,7 +7,7 @@ description: Endpoints, autenticação e respostas da API do LPData.
 
 Esta referência manual descreve os endpoints usados pelos donos das Aplicações Consumidoras. O LPData não publica uma especificação OpenAPI nesta versão.
 
-A URL base da API é `https://api.lpdata.io`; os exemplos a usam pela variável `LPDATA_API_URL`. Os exemplos detalhados estão nos guias de [Autenticação](/authentication), [Landing Pages](/landing-pages) e [Assets](/assets).
+A URL base da API é `https://api.lpdata.io`; os endpoints abaixo são relativos a ela. Os exemplos detalhados estão nos guias de [Autenticação](/authentication), [Landing Pages](/landing-pages) e [Assets](/assets).
 
 ## Autenticação
 

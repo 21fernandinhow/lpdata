@@ -11,10 +11,12 @@ Assets are files associated with your account. Listing, retrieving, uploading, o
 
 Upload the file as multipart form data in the `asset[file]` field:
 
-```bash
-curl --request POST "$LPDATA_API_URL/assets" \
-  --header "Authorization: Bearer $LPDATA_ACCESS_TOKEN" \
-  --form 'asset[file]=@./hero.webp'
+```http
+POST https://api.lpdata.io/assets
+Authorization: Bearer <access_token>
+Content-Type: multipart/form-data
+
+asset[file]: <binary file>
 ```
 
 A `201 Created` response contains metadata and the public file URL:
@@ -38,16 +40,16 @@ Use `public_url` as the `value` of a `hosted_file` Editable Field in the Landing
 
 List the files owned by the account:
 
-```bash
-curl "$LPDATA_API_URL/assets" \
-  --header "Authorization: Bearer $LPDATA_ACCESS_TOKEN"
+```http
+GET https://api.lpdata.io/assets
+Authorization: Bearer <access_token>
 ```
 
 Retrieve one owned Asset by `id`:
 
-```bash
-curl "$LPDATA_API_URL/assets/<id>" \
-  --header "Authorization: Bearer $LPDATA_ACCESS_TOKEN"
+```http
+GET https://api.lpdata.io/assets/<id>
+Authorization: Bearer <access_token>
 ```
 
 Responses use the `assets` and `asset` wrappers. An account cannot retrieve another account's Assets; the endpoint returns `404 Not Found`:
@@ -58,9 +60,9 @@ Responses use the `assets` and `asset` wrappers. An account cannot retrieve anot
 
 ## Delete an Asset
 
-```bash
-curl --request DELETE "$LPDATA_API_URL/assets/<id>" \
-  --header "Authorization: Bearer $LPDATA_ACCESS_TOKEN"
+```http
+DELETE https://api.lpdata.io/assets/<id>
+Authorization: Bearer <access_token>
 ```
 
 A successful deletion returns `204 No Content`. Requests without a valid token return `401 Unauthorized`.
