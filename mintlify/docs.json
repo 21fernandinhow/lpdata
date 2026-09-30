@@ -48,7 +48,7 @@
           {
             "group": "Agentes",
             "pages": [
-              "mcp"
+              "mcp-server"
             ]
           },
           {
@@ -86,7 +86,7 @@
           {
             "group": "Agents",
             "pages": [
-              "en/mcp"
+              "en/mcp-server"
             ]
           },
           {

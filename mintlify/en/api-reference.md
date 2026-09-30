@@ -51,7 +51,7 @@ All Asset routes require a Bearer token. Uploads use multipart form data in the 
 | --- | --- | --- | --- |
 | `POST` | `/mcp` | `X-LPData-Email` and `X-LPData-Password` headers | `200 OK`; Model Context Protocol JSON-RPC response |
 
-The endpoint speaks the MCP Streamable HTTP transport and is meant for an MCP client, not for direct calls. Its tools cover the same operations as this reference; see [MCP server](/en/mcp). A missing or invalid credential returns `401 Unauthorized`.
+The endpoint speaks the MCP Streamable HTTP transport and is meant for an MCP client, not for direct calls. Its tools cover the same operations as this reference; see [MCP server](/en/mcp-server). A missing or invalid credential returns `401 Unauthorized`.
 
 ## Error responses
 
