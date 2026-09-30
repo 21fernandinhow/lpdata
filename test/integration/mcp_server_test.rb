@@ -279,6 +279,17 @@ class McpServerTest < ActionDispatch::IntegrationTest
     assert_not_includes command, PASSWORD
   end
 
+  # The first real session lost time to this: the upload command reads a channel
+  # of its own, and an empty environment surfaces as a 401 that reads like a bad
+  # password. The diagnosis belongs where the agent will be looking.
+  test "get_asset_upload_command explains the empty environment failure" do
+    description = mcp_tools.find { |tool| tool["name"] == "get_asset_upload_command" }.fetch("description")
+
+    assert_includes description, "printenv LPDATA_EMAIL LPDATA_PASSWORD"
+    assert_includes description, "Bearer null"
+    assert_includes description, "not a wrong password"
+  end
+
   test "delete_asset removes an owned asset and refuses another user's" do
     asset = @user.assets.create!(file: fixture_file_upload("example.txt", "text/plain"))
     other = User.create!(email: "other@example.com", password: PASSWORD)

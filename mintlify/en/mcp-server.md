@@ -11,21 +11,20 @@ There is nothing to install: you add a URL and your credential to your MCP clien
 
 This page is for the **developer** building the landing page. The tools are the same operations described in [Landing Pages](/en/landing-pages) and [Assets](/en/assets), one tool per operation.
 
-## Put your credential in the environment
-
-The server identifies you by the same account you [sign in](/en/authentication) with. Set these variables in the shell you start your MCP client from:
-
-```sh
-export LPDATA_EMAIL="owner@example.com"
-export LPDATA_PASSWORD="<your-password>"
-export LPDATA_URL="https://api.lpdata.io"
-```
-
-`LPDATA_URL` is used by the file upload command and falls back to `https://api.lpdata.io` when unset. All three also serve the `curl` the agent runs to upload an Asset, so set them even if your client only needs the first two.
-
 ## Add the server to your MCP client
 
-Point the client at the server URL and send your credential in two headers, `X-LPData-Email` and `X-LPData-Password`. The configuration references the environment variables and holds no secret, so it can be committed:
+The server identifies you by the same account you [sign in](/en/authentication) with, sent in two headers: `X-LPData-Email` and `X-LPData-Password`.
+
+Store the credential **literally**, in a configuration file kept outside your repository. In Claude Code:
+
+```sh
+claude mcp add --transport http lpdata https://api.lpdata.io/mcp \
+  -H "X-LPData-Email: <your-email>" -H "X-LPData-Password: <your-password>"
+
+claude mcp get lpdata   # should answer ✔ Connected
+```
+
+That writes to local scope, in `~/.claude.json`. In any other client, the equivalent is the same URL with the same two headers:
 
 ```json
 {
@@ -34,17 +33,49 @@ Point the client at the server URL and send your credential in two headers, `X-L
       "type": "http",
       "url": "https://api.lpdata.io/mcp",
       "headers": {
-        "X-LPData-Email": "${LPDATA_EMAIL}",
-        "X-LPData-Password": "${LPDATA_PASSWORD}"
+        "X-LPData-Email": "<your-email>",
+        "X-LPData-Password": "<your-password>"
       }
     }
   }
 }
 ```
 
-The credential says **who** is calling: each person uses their own account and sees only their own Landing Pages and Assets. There is no login, logout or refresh tool, and no token is ever handed to the agent.
+<Warning>
+That file now holds your password. Keep it outside your repository and **do not commit it**.
+</Warning>
+
+### Why not `${LPDATA_EMAIL}` in the configuration
+
+Referencing environment variables from the configuration looks safer, and it does work — as long as the MCP client inherits your shell environment. A client launched from its application icon or from an editor extension **does not read your `~/.zshrc`**: the variable arrives empty and the connection fails.
+
+The symptom is treacherous because it depends on how you opened the program: it works when you start from a terminal and fails when you start from the icon, which reads as intermittence with no cause. That is why the literal credential, kept outside the repository, is the recommended route.
+
+The credential says **who** is calling: each person registers their own and sees only their own Landing Pages and Assets. There is no login, logout or refresh tool, and no token is ever handed to the agent.
 
 Ask the agent to call `check_connection`. It answers with the account `id` and email, which confirms the headers reached the server.
+
+## Prepare the shell before uploading files
+
+Uploading Assets does not go through MCP: `get_asset_upload_command` returns a command the **agent runs in its own shell**, and that command reads the credential from the environment. It is a channel separate from the configuration above — registering the server with a literal credential fixes the connection, but not the upload.
+
+Set the variables in the shell where the agent runs commands:
+
+```sh
+export LPDATA_EMAIL="owner@example.com"
+export LPDATA_PASSWORD="<your-password>"
+export LPDATA_URL="https://api.lpdata.io"
+```
+
+`LPDATA_URL` is optional and falls back to `https://api.lpdata.io` when unset. Confirm the other two arrived by asking the agent to run:
+
+```sh
+printenv LPDATA_EMAIL LPDATA_PASSWORD
+```
+
+<Warning>
+With the variables empty, the command's `sign_in` returns `401`, `jq` turns the response into `null`, and the second `curl` goes out with `Authorization: Bearer null` and takes another `401`. None of those messages points at the environment, so check `printenv` before suspecting the password or the account.
+</Warning>
 
 ## Tools
 
@@ -109,7 +140,7 @@ curl -s -X POST "${LPDATA_URL:-https://api.lpdata.io}/assets" \
   -H "Authorization: Bearer $TOKEN" -F "asset[file]=@$FILE"
 ```
 
-The shell is what expands `$LPDATA_EMAIL`, `$LPDATA_PASSWORD` and `$TOKEN`: the agent writes the command but never sees your password or the token. The command needs [`jq`](https://jqlang.github.io/jq/) installed and must be run as it is.
+The shell is what expands `$LPDATA_EMAIL`, `$LPDATA_PASSWORD` and `$TOKEN`: the agent writes the command but never sees your password or the token. The command needs [`jq`](https://jqlang.github.io/jq/) installed and must be run as it is. If it answers `401`, go back to [preparing the shell](#prepare-the-shell-before-uploading-files): it is almost always an empty environment variable, not a wrong password.
 
 The second `curl` prints the Asset `public_url`. Use that URL as the `value` of a `hosted_file` Editable Field.
 

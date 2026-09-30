@@ -14,6 +14,17 @@ module McpTools
       variables, so the command text never contains the password or the token.
       Do not print, echo or paste the token anywhere.
 
+      Those variables are a channel of their own: they are NOT the credential
+      headers this MCP session is configured with, and a client launched from an
+      application icon or an editor extension does not inherit a login shell, so
+      they can easily be missing here even though the session authenticated fine.
+      Check with `printenv LPDATA_EMAIL LPDATA_PASSWORD` before running the
+      command. If they are empty the command still runs: `sign_in` answers 401,
+      `jq` turns that into `null`, and the upload goes out as
+      `Authorization: Bearer null` and takes another 401. That 401 means an empty
+      environment, not a wrong password, so fix the environment rather than
+      asking the user to re-check their account.
+
       The second curl prints the uploaded asset as JSON. Take its `public_url`
       and use it as the `value` of a `hosted_file` Editable Field.
     DESCRIPTION
