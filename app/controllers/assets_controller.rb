@@ -37,17 +37,6 @@ class AssetsController < ApplicationController
   end
 
   def serialized_asset(asset)
-    {
-      id: asset.id,
-      user_id: asset.user_id,
-      filename: asset.file.blob.filename.to_s,
-      content_type: asset.file.blob.content_type,
-      byte_size: asset.file.blob.byte_size,
-      public_url: Rails.application.routes.url_helpers.rails_blob_url(
-        asset.file,
-        host: request.base_url,
-        only_path: false
-      )
-    }
+    AssetSerializer.call(asset, host: request.base_url)
   end
 end

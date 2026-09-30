@@ -45,6 +45,14 @@ Todas as rotas de Assets exigem Bearer token. Upload usa multipart form data no 
 | `GET` | `/assets/:id` | Bearer | `200 OK`; Asset próprio |
 | `DELETE` | `/assets/:id` | Bearer | `204 No Content` |
 
+## Servidor MCP
+
+| Método | Endpoint | Acesso | Sucesso |
+| --- | --- | --- | --- |
+| `POST` | `/mcp` | Headers `X-LPData-Email` e `X-LPData-Password` | `200 OK`; resposta JSON-RPC do Model Context Protocol |
+
+O endpoint fala o transporte Streamable HTTP do MCP e é feito para um cliente MCP, não para chamadas diretas. As ferramentas cobrem as mesmas operações desta referência; veja [Servidor MCP](/mcp). Credencial ausente ou inválida retorna `401 Unauthorized`.
+
 ## Respostas de erro
 
 | Código | Quando ocorre |

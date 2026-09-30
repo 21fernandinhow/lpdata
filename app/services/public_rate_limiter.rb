@@ -1,6 +1,11 @@
 class PublicRateLimiter
   WINDOW = 1.minute
 
+  # Reads whose Origin matches one of the landing page allowed hosts get the
+  # browser budget; every other caller, the MCP server included, gets the default.
+  DEFAULT_LIMIT = 30
+  ALLOWED_ORIGIN_LIMIT = 1_000
+
   def initialize(cache: Rails.cache, clock: -> { Time.current })
     @cache = cache
     @clock = clock
