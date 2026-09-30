@@ -48,17 +48,12 @@ class LandingPagesController < ApplicationController
   end
 
   def landing_page_attributes(allow_partial: false)
-    attributes = landing_page_params
-    keys = allow_partial ? attributes.keys : %w[name current_data allowed_hosts]
-
-    keys.each_with_object({}) do |key, permitted|
-      permitted[key.to_sym] = attributes[key] if %w[name current_data allowed_hosts].include?(key)
-    end
+    LandingPageAttributeFilter.call(landing_page_params, allow_partial: allow_partial)
   end
 
   def throttle_public_read
     @landing_page = LandingPage.find_by!(public_id: params[:public_id])
-    limit = configured_origin? ? 1_000 : 30
+    limit = configured_origin? ? PublicRateLimiter::ALLOWED_ORIGIN_LIMIT : PublicRateLimiter::DEFAULT_LIMIT
 
     return if PublicRateLimiter.new.allowed?(ip: request.remote_ip, limit: limit)
 

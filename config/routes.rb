@@ -16,6 +16,11 @@ Rails.application.routes.draw do
 
   resources :assets, only: %i[index show create destroy]
 
+  # Resolved per request rather than captured here: routes are not redrawn when a
+  # tool file changes, so mounting the object itself would pin the endpoint to
+  # classes the reloader has already discarded.
+  mount ->(env) { McpEndpoint.instance.call(env) }, at: "/mcp", as: :mcp
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

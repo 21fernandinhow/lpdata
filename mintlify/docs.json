@@ -26,19 +26,36 @@
         "groups": [
           {
             "group": "Começar",
-            "pages": ["index", "quickstart", "authentication"]
+            "pages": [
+              "index",
+              "quickstart",
+              "authentication"
+            ]
           },
           {
             "group": "Consumir conteúdo",
-            "pages": ["public-content"]
+            "pages": [
+              "public-content"
+            ]
           },
           {
             "group": "Gerenciar conteúdo",
-            "pages": ["landing-pages", "assets"]
+            "pages": [
+              "landing-pages",
+              "assets"
+            ]
+          },
+          {
+            "group": "Agentes",
+            "pages": [
+              "mcp"
+            ]
           },
           {
             "group": "Referência",
-            "pages": ["api-reference"]
+            "pages": [
+              "api-reference"
+            ]
           }
         ]
       },
@@ -47,19 +64,36 @@
         "groups": [
           {
             "group": "Get started",
-            "pages": ["en/index", "en/quickstart", "en/authentication"]
+            "pages": [
+              "en/index",
+              "en/quickstart",
+              "en/authentication"
+            ]
           },
           {
             "group": "Consume content",
-            "pages": ["en/public-content"]
+            "pages": [
+              "en/public-content"
+            ]
           },
           {
             "group": "Manage content",
-            "pages": ["en/landing-pages", "en/assets"]
+            "pages": [
+              "en/landing-pages",
+              "en/assets"
+            ]
+          },
+          {
+            "group": "Agents",
+            "pages": [
+              "en/mcp"
+            ]
           },
           {
             "group": "Reference",
-            "pages": ["en/api-reference"]
+            "pages": [
+              "en/api-reference"
+            ]
           }
         ]
       }
