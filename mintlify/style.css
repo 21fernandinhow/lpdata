@@ -1,58 +1,58 @@
 /*
- * Paleta monocromática (keppel/teal).
+ * Paleta monocromática (loblolly).
  * O Mintlify deriva textos, bordas e superfícies da escala --gray-*;
  * o conteúdo dos artigos usa as variáveis --tw-prose-* do Tailwind Typography.
  */
 
 html:root {
-  --gray-50: 240 253 250;
-  --gray-100: 204 251 241;
-  --gray-200: 153 246 228;
-  --gray-300: 94 234 212;
-  --gray-400: 45 212 191;
-  --gray-500: 20 184 166;
-  --gray-600: 13 148 136;
-  --gray-700: 15 118 110;
-  --gray-800: 17 94 89;
-  --gray-900: 19 78 74;
-  --gray-950: 4 47 46;
+  --gray-50: 245 247 249;
+  --gray-100: 233 236 240;
+  --gray-200: 217 223 228;
+  --gray-300: 200 209 217;
+  --gray-400: 158 173 188;
+  --gray-500: 135 150 170;
+  --gray-600: 117 131 155;
+  --gray-700: 105 116 140;
+  --gray-800: 89 97 116;
+  --gray-900: 74 80 94;
+  --gray-950: 48 51 59;
 }
 
 html .prose,
 html .prose-gray {
   /* Tema claro */
-  --tw-prose-body: #042f2e;
-  --tw-prose-headings: #134e4a;
-  --tw-prose-lead: #134e4a;
-  --tw-prose-links: #0f766e;
-  --tw-prose-bold: #042f2e;
-  --tw-prose-counters: #0f766e;
-  --tw-prose-bullets: #2dd4bf;
-  --tw-prose-hr: #5eead4;
-  --tw-prose-quotes: #042f2e;
-  --tw-prose-quote-borders: #2dd4bf;
-  --tw-prose-captions: #115e59;
-  --tw-prose-kbd: #042f2e;
-  --tw-prose-code: #134e4a;
-  --tw-prose-th-borders: #2dd4bf;
-  --tw-prose-td-borders: #5eead4;
+  --tw-prose-body: #30333b;
+  --tw-prose-headings: #4a505e;
+  --tw-prose-lead: #4a505e;
+  --tw-prose-links: #69748c;
+  --tw-prose-bold: #30333b;
+  --tw-prose-counters: #69748c;
+  --tw-prose-bullets: #9eadbc;
+  --tw-prose-hr: #c8d1d9;
+  --tw-prose-quotes: #30333b;
+  --tw-prose-quote-borders: #9eadbc;
+  --tw-prose-captions: #596174;
+  --tw-prose-kbd: #30333b;
+  --tw-prose-code: #4a505e;
+  --tw-prose-th-borders: #9eadbc;
+  --tw-prose-td-borders: #c8d1d9;
 
   /* Tema escuro (aplicado por dark:prose-invert) */
-  --tw-prose-invert-body: #80b2ad;
-  --tw-prose-invert-headings: #99f6e4;
-  --tw-prose-invert-lead: #99f6e4;
-  --tw-prose-invert-links: #2dd4bf;
-  --tw-prose-invert-bold: #99f6e4;
-  --tw-prose-invert-counters: #2dd4bf;
-  --tw-prose-invert-bullets: #0f766e;
-  --tw-prose-invert-hr: #134e4a;
-  --tw-prose-invert-quotes: #ccfbf1;
-  --tw-prose-invert-quote-borders: #115e59;
-  --tw-prose-invert-captions: #5eead4;
-  --tw-prose-invert-kbd: #f0fdfa;
-  --tw-prose-invert-code: #99f6e4;
-  --tw-prose-invert-th-borders: #115e59;
-  --tw-prose-invert-td-borders: #134e4a;
+  --tw-prose-invert-body: #9eadbc;
+  --tw-prose-invert-headings: #d9dfe4;
+  --tw-prose-invert-lead: #d9dfe4;
+  --tw-prose-invert-links: #9eadbc;
+  --tw-prose-invert-bold: #d9dfe4;
+  --tw-prose-invert-counters: #9eadbc;
+  --tw-prose-invert-bullets: #69748c;
+  --tw-prose-invert-hr: #4a505e;
+  --tw-prose-invert-quotes: #e9ecf0;
+  --tw-prose-invert-quote-borders: #596174;
+  --tw-prose-invert-captions: #c8d1d9;
+  --tw-prose-invert-kbd: #f5f7f9;
+  --tw-prose-invert-code: #d9dfe4;
+  --tw-prose-invert-th-borders: #596174;
+  --tw-prose-invert-td-borders: #4a505e;
 }
 
 /*
@@ -62,73 +62,73 @@ html .prose-gray {
  */
 html .prose:not(.callout *),
 html .prose :is(p, li, td, blockquote, strong):not(.callout *) {
-  color: #042f2e;
+  color: #30333b;
 }
 
 html .prose :is(h1, h2, h3, h4, h5, h6, thead th):not(.callout *),
 html #page-title {
-  color: #134e4a;
+  color: #4a505e;
 }
 
 html.dark .prose:not(.callout *),
 html.dark .prose :is(p, li, td, blockquote):not(.callout *) {
-  color: #80b2ad;
+  color: #9eadbc;
 }
 
 html.dark .prose :is(strong, h1, h2, h3, h4, h5, h6, thead th):not(.callout *),
 html.dark #page-title {
-  color: #99f6e4;
+  color: #d9dfe4;
 }
 
 /* Branco e preto do Tailwind */
 html:root {
-  --color-white: #f0fdfa;
-  --color-black: #000807;
+  --color-white: #f5f7f9;
+  --color-black: #16181c;
 }
 
 /* Blocos de código: fundo e texto padrão (o realce de sintaxe é mantido) */
 html:not(.dark) [data-component-part="code-block-root"],
 html:not(.dark) .code-block-background,
 html:not(.dark) pre.shiki {
-  background-color: #defcf5 !important;
+  background-color: #eef1f4 !important;
 }
 
 html [style*="--shiki-dark-bg"] {
-  --shiki-dark-bg: #03201f !important;
+  --shiki-dark-bg: #23262c !important;
 }
 
 html .bg-codeblock,
 html.dark .dark\:bg-codeblock {
-  background-color: #03201f;
+  background-color: #23262c;
 }
 
 html.dark .dark\:bg-codeblock\/50 {
-  background-color: rgb(3 32 31 / 50%);
+  background-color: rgb(35 38 44 / 50%);
 }
 
 html:not(.dark) .shiki[style*="color:#1F2328" i],
 html:not(.dark) .shiki [style*="color:#1F2328" i],
 html:not(.dark) [data-component-part="code-block-root"][style*="color:#1F2328" i] {
-  color: #042f2e !important;
+  color: #30333b !important;
 }
 
 html [style*="--shiki-dark:#D4D4D4" i] {
-  --shiki-dark: #ccfbf1 !important;
+  --shiki-dark: #e9ecf0 !important;
 }
 
 /* Badges neutros */
 html [data-badge][data-color="gray"] {
-  --color-bg: #99f6e4 !important;
-  --color-text: #134e4a !important;
+  --color-bg: #d9dfe4 !important;
+  --color-text: #4a505e !important;
 }
 
 html.dark [data-badge][data-color="gray"] {
-  --color-bg: #134e4a !important;
-  --color-text: #99f6e4 !important;
+  --color-bg: #4a505e !important;
+  --color-text: #d9dfe4 !important;
 }
 
 ::selection {
-  background-color: rgb(45 212 191 / 35%);
+  background-color: rgb(158 173 188 / 35%);
 }
 
 /*
@@ -137,54 +137,54 @@ html.dark [data-badge][data-color="gray"] {
  */
 html #sidebar-content a:not([aria-current="page"]),
 html #table-of-contents li:not([data-active]) > a {
-  color: #042f2e;
+  color: #30333b;
 }
 
 html #sidebar-content a:not([aria-current="page"]):hover,
 html #table-of-contents li:not([data-active]) > a:hover {
-  color: #0f766e;
+  color: #69748c;
 }
 
 html.dark #sidebar-content a:not([aria-current="page"]),
 html.dark #table-of-contents li:not([data-active]) > a {
-  color: #80b2ad;
+  color: #9eadbc;
 }
 
 html.dark #sidebar-content a:not([aria-current="page"]):hover,
 html.dark #table-of-contents li:not([data-active]) > a:hover {
-  color: #99f6e4;
+  color: #d9dfe4;
 }
 
 /* Título "Na página" do sumário no tom dos títulos */
 html.dark #table-of-contents .dark\:text-gray-300 {
-  color: #99f6e4;
+  color: #d9dfe4;
 }
 
 /* Tema claro: bordas um tom mais escuras */
 html:not(.dark) .border-gray-950\/10 {
-  border-color: rgb(4 47 46 / 18%);
+  border-color: rgb(48 51 59 / 18%);
 }
 
 html:not(.dark) .border-gray-500\/5 {
-  border-color: rgb(20 184 166 / 15%);
+  border-color: rgb(135 150 170 / 15%);
 }
 
 html:not(.dark) .border-gray-100 {
-  border-color: rgb(153 246 228);
+  border-color: rgb(217 223 228);
 }
 
 html:not(.dark) .border-gray-200 {
-  border-color: rgb(94 234 212);
+  border-color: rgb(200 209 217);
 }
 
 html:not(.dark) .ring-gray-400\/30 {
-  --tw-ring-color: rgb(13 148 136 / 35%);
+  --tw-ring-color: rgb(117 131 155 / 35%);
 }
 
 html:not(.dark) .hover\:ring-gray-400\/60:hover {
-  --tw-ring-color: rgb(13 148 136 / 60%);
+  --tw-ring-color: rgb(117 131 155 / 60%);
 }
 
 html:not(.dark) .prose :where(hr, thead, tbody tr, blockquote) {
-  border-color: #5eead4;
+  border-color: #c8d1d9;
 }
