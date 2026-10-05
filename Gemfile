@@ -59,7 +59,7 @@ gem "devise", "~> 5.0"
 
 gem "devise-jwt", "~> 0.13.0"
 
-gem "aws-sdk-s3", "~> 1.0"
+gem "aws-sdk-s3", "~> 1.233"
 
 gem "rack-cors", "~> 3.0"
 
