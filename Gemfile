@@ -63,4 +63,4 @@ gem "aws-sdk-s3", "~> 1.0"
 
 gem "rack-cors", "~> 3.0"
 
-gem "mcp", "~> 1.6"
+gem "mcp", "~> 1.7"
