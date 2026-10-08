@@ -184,7 +184,7 @@ GEM
       net-smtp
     marcel (1.2.1)
     matrix (0.4.3)
-    mcp (1.6.1)
+    mcp (1.7.0)
       json_schemer (>= 2.4)
     mini_mime (1.1.5)
     minitest (6.0.6)
@@ -289,7 +289,7 @@ GEM
       prism (>= 1.6.0)
       rbs (>= 4.0.0)
       tsort
-    regexp_parser (2.13.0)
+    regexp_parser (2.13.1)
     reline (0.7.0)
       io-console (~> 0.5)
     responders (3.2.1)
@@ -397,7 +397,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   json (~> 2.7)
-  mcp (~> 1.6)
+  mcp (~> 1.7)
   pg (~> 1.1)
   puma (>= 5.0)
   rack-cors (~> 3.0)
