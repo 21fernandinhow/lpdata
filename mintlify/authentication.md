@@ -81,7 +81,7 @@ Sem um token válido, o endpoint retorna `401 Unauthorized`.
 
 ## Atualizar tokens
 
-O token de atualização é enviado no corpo de `POST /auth/refresh`. A resposta contém um novo par de tokens; o token de atualização anterior é invalidado e não deve ser reutilizado.
+O token de atualização é enviado no corpo de `POST /auth/refresh`. A resposta contém o usuário e um novo par de tokens; o token de atualização anterior é invalidado e não deve ser reutilizado.
 
 ```http
 POST https://api.lpdata.io/auth/refresh
@@ -92,11 +92,19 @@ Content-Type: application/json
 }
 ```
 
+```json
+{
+  "user": { "id": 42, "email": "owner@example.com" },
+  "access_token": "<access_token>",
+  "refresh_token": "<refresh_token>"
+}
+```
+
 Um token inválido ou expirado retorna `401 Unauthorized` com `Invalid or expired refresh token`.
 
 ## Sair
 
-`DELETE /auth/sign_out` revoga o token de acesso do header e o token de atualização enviado no corpo. Em caso de sucesso, retorna `204 No Content`.
+`DELETE /auth/sign_out` revoga o token de atualização enviado no corpo e encerra a sessão. O token de acesso no header é opcional, mas recomendado: quando enviado, é revogado na hora; sem ele, continua válido até expirar, por no máximo 2 horas. Um token de acesso já expirado não impede a saída. Em caso de sucesso, retorna `204 No Content`. Um token de atualização inválido ou expirado retorna `401 Unauthorized`.
 
 ```http
 DELETE https://api.lpdata.io/auth/sign_out

@@ -11,15 +11,15 @@ A URL base da API é `https://api.lpdata.io`; os endpoints abaixo são relativos
 
 ## Autenticação
 
-Endpoints marcados como autenticados exigem `Authorization: Bearer <access_token>`. Login e cadastro não exigem token. `POST /auth/refresh` recebe o refresh token no corpo. `DELETE /auth/sign_out` exige o access token no header e refresh token no corpo.
+Endpoints marcados como autenticados exigem `Authorization: Bearer <access_token>`. Login e cadastro não exigem token. `POST /auth/refresh` recebe o refresh token no corpo. `DELETE /auth/sign_out` exige o refresh token no corpo; o access token no header é opcional, mas recomendado.
 
 | Método | Endpoint | Acesso | Sucesso |
 | --- | --- | --- | --- |
 | `POST` | `/auth/sign_up` | Público | `201 Created`; usuário e tokens |
 | `POST` | `/auth/sign_in` | Público | `200 OK`; usuário e tokens |
-| `POST` | `/auth/refresh` | Refresh token no JSON | `200 OK`; novo par de tokens |
+| `POST` | `/auth/refresh` | Refresh token no JSON | `200 OK`; usuário e novo par de tokens |
 | `GET` | `/auth/me` | Bearer | `200 OK`; usuário autenticado |
-| `DELETE` | `/auth/sign_out` | Bearer e refresh token | `204 No Content` |
+| `DELETE` | `/auth/sign_out` | Refresh token no JSON; Bearer opcional | `204 No Content` |
 
 ## Landing Pages
 

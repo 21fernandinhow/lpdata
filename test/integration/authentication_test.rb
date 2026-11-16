@@ -142,4 +142,49 @@ class AuthenticationTest < ActionDispatch::IntegrationTest
 
     assert_response :unauthorized
   end
+
+  test "logout with an expired access token still ends the session" do
+    post "/auth/sign_up", params: {
+      user: {
+        email: "owner@example.com",
+        password: "password123",
+        password_confirmation: "password123"
+      }
+    }, as: :json
+    response_body = JSON.parse(response.body)
+    access_token = response_body.fetch("access_token")
+    refresh_token = response_body.fetch("refresh_token")
+
+    travel 2.hours + 1.minute do
+      delete "/auth/sign_out",
+        params: { refresh_token: refresh_token },
+        headers: { "Authorization" => "Bearer #{access_token}" },
+        as: :json
+
+      assert_response :no_content
+
+      post "/auth/refresh", params: { refresh_token: refresh_token }, as: :json
+
+      assert_response :unauthorized
+    end
+  end
+
+  test "logout with an invalid refresh token returns unauthorized" do
+    post "/auth/sign_up", params: {
+      user: {
+        email: "owner@example.com",
+        password: "password123",
+        password_confirmation: "password123"
+      }
+    }, as: :json
+    access_token = JSON.parse(response.body).fetch("access_token")
+
+    delete "/auth/sign_out",
+      params: { refresh_token: "not-a-refresh-token" },
+      headers: { "Authorization" => "Bearer #{access_token}" },
+      as: :json
+
+    assert_response :unauthorized
+    assert_equal [ "Invalid or expired refresh token" ], JSON.parse(response.body).fetch("errors")
+  end
 end
