@@ -57,7 +57,7 @@ class McpAuthentication
   end
 
   def verified_user
-    user = User.find_by(email: email)
+    user = User.find_for_authentication(email: email)
     return unless user&.valid_password?(password)
 
     Rails.cache.write(cache_key(session_id), user.id, expires_in: CACHE_TTL) if session_id.present?

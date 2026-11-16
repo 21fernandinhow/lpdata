@@ -63,6 +63,18 @@ class McpServerTest < ActionDispatch::IntegrationTest
     assert_includes response.body, "X-LPData-Email"
   end
 
+  test "the email header is accepted in mixed case" do
+    mcp_connect(email: "Owner@Example.COM", password: PASSWORD)
+
+    assert_equal @user.id, mcp_tool_json("check_connection").dig("user", "id")
+  end
+
+  test "the email header is accepted with surrounding whitespace" do
+    mcp_connect(email: "  owner@example.com ", password: PASSWORD)
+
+    assert_equal @user.id, mcp_tool_json("check_connection").dig("user", "id")
+  end
+
   test "the session caches the user so bcrypt runs once" do
     verifications = counting_password_verifications do
       mcp_connect(email: @user.email, password: PASSWORD)
