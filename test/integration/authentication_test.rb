@@ -33,6 +33,28 @@ class AuthenticationTest < ActionDispatch::IntegrationTest
     assert response_body["refresh_token"].present?
   end
 
+  test "sign in accepts the email in mixed case" do
+    User.create!(email: "owner@example.com", password: "password123")
+
+    post "/auth/sign_in", params: {
+      user: { email: "Owner@Example.COM", password: "password123" }
+    }, as: :json
+
+    assert_response :success
+    assert_equal "owner@example.com", JSON.parse(response.body).dig("user", "email")
+  end
+
+  test "sign in accepts the email with surrounding whitespace" do
+    User.create!(email: "owner@example.com", password: "password123")
+
+    post "/auth/sign_in", params: {
+      user: { email: "  owner@example.com ", password: "password123" }
+    }, as: :json
+
+    assert_response :success
+    assert_equal "owner@example.com", JSON.parse(response.body).dig("user", "email")
+  end
+
   test "invalid credentials return a JSON error" do
     post "/auth/sign_in", params: {
       user: { email: "missing@example.com", password: "wrong-password" }

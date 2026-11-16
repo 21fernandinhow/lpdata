@@ -1,7 +1,7 @@
 module Auth
   class SessionsController < ApplicationController
     def create
-      user = User.find_by(email: session_params[:email])
+      user = User.find_for_authentication(email: session_params[:email])
 
       if user&.valid_password?(session_params[:password])
         render json: {
