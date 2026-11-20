@@ -279,3 +279,12 @@ div:has(> nav #topbar-cta-button) > :not(nav) {
     display: none;
   }
 }
+
+/*
+ * No celular, o menu "Mais ações" (três pontos, ao lado da lupa) só repetia o link do Dashboard,
+ * que já está no topo da barra lateral. Ele sai. O seletor pelo irmão da lupa não depende do
+ * texto do aria-label, que muda com o idioma.
+ */
+#search-bar-entry-mobile ~ button {
+  display: none;
+}
