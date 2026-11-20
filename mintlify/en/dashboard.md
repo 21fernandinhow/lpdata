@@ -46,8 +46,12 @@ Each field has a **type**. The type appears next to the field's name and defines
 | `number` | A number, such as a price |
 | `boolean` | An on and off switch, such as showing or hiding a block |
 | `url` | The address of a page, such as `https://example.com` |
-| `hosted_file` | The address of a file stored in LPData, such as an image |
+| `hosted_file` | One of your files, picked from a list, such as an image |
 | `external_file` | The address of a file stored on another site, such as a video |
+
+In a `hosted_file` field, click **Escolher arquivo** (Choose file). A window shows your files: click the one you want to use. To use a new file, click **+** in the same window, upload the file, and then click it. If the file is an image, the field shows a preview. **Limpar** (Clear) leaves the field empty.
+
+In an `external_file` field, paste the file's address. If it is an image, the field also shows a preview.
 
 In a number field, if you delete the number or type something that is not a number, the field shows **Número inválido** (Invalid number). The Dashboard only keeps the number when it is correct.
 

@@ -46,8 +46,12 @@ Cada campo tem um **tipo**. O tipo aparece ao lado do nome do campo e define o q
 | `number` | Um número, como um preço |
 | `boolean` | Um interruptor de ligado e desligado, como mostrar ou esconder um bloco |
 | `url` | O endereço de uma página, como `https://exemplo.com` |
-| `hosted_file` | O endereço de um arquivo que está no LPData, como uma imagem |
+| `hosted_file` | Um dos seus arquivos, escolhido numa lista, como uma imagem |
 | `external_file` | O endereço de um arquivo que está em outro site, como um vídeo |
+
+Num campo `hosted_file`, clique em **Escolher arquivo**. Uma janela mostra os seus arquivos: clique no que você quer usar. Para usar um arquivo novo, clique em **+** na mesma janela, envie o arquivo e depois clique nele. Se o arquivo for uma imagem, o campo mostra uma prévia. **Limpar** deixa o campo vazio.
+
+Num campo `external_file`, cole o endereço do arquivo. Se for uma imagem, o campo também mostra uma prévia.
 
 Num campo de número, se você apagar o número ou escrever algo que não é número, o campo mostra **Número inválido**. O Dashboard só guarda o número quando ele estiver certo.
 
