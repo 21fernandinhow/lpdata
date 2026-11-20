@@ -69,10 +69,12 @@ Clique no tipo, ao lado do nome do campo, e escolha outro tipo. **Atenção:** q
 
 ### Renomear e remover
 
-Ao lado do nome de cada campo, e no fim de cada seção, há dois ícones:
+À direita do nome de cada campo e de cada seção há dois ícones:
 
 - O **lápis** muda o nome do campo ou da seção.
 - A **lixeira** remove o campo, o item da lista ou a seção inteira, com tudo o que está dentro dela.
+
+Os itens de uma lista têm só a lixeira, porque não têm nome.
 
 O Dashboard pede confirmação antes de renomear ou remover.
 

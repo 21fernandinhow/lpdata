@@ -69,10 +69,12 @@ Click the type, next to the field's name, and pick another type. **Attention:** 
 
 ### Rename and remove
 
-Next to each field's name, and at the end of each section, there are two icons:
+To the right of each field's and each section's name there are two icons:
 
 - The **pencil** changes the name of the field or section.
 - The **trash can** removes the field, the list item, or the whole section, with everything inside it.
+
+List items only have the trash can, because they have no name.
 
 The Dashboard asks for confirmation before renaming or removing.
 
