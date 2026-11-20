@@ -220,3 +220,19 @@ html.dark #topbar-cta-button a .text-white,
 html.dark #topbar-cta-button a svg {
   color: rgb(var(--gray-200));
 }
+
+/*
+ * Na barra de cima, o seletor de tema vem antes do botão "Dashboard". O contêiner dos dois usa
+ * margem entre irmãos (space-x); com a ordem trocada, o espaço passa a vir do gap.
+ */
+div:has(> nav #topbar-cta-button) {
+  gap: 1rem;
+}
+
+div:has(> nav #topbar-cta-button) > * {
+  margin-inline: 0 !important;
+}
+
+div:has(> nav #topbar-cta-button) > :not(nav) {
+  order: -1;
+}
