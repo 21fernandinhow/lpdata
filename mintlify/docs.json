@@ -19,12 +19,11 @@
     }
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Dashboard",
-        "href": "https://dashboard.lpdata.io"
-      }
-    ]
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://dashboard.lpdata.io"
+    }
   },
   "navigation": {
     "languages": [

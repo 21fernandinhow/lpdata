@@ -188,3 +188,35 @@ html:not(.dark) .hover\:ring-gray-400\/60:hover {
 html:not(.dark) .prose :where(hr, thead, tbody tr, blockquote) {
   border-color: #c8d1d9;
 }
+
+/*
+ * Botão "Dashboard" da barra de cima: só contorno, sem o fundo da cor primária.
+ * O Mintlify desenha o fundo num span absoluto e o texto em branco.
+ */
+#topbar-cta-button a > span:first-child {
+  border: 1px solid rgb(var(--gray-300));
+  background: transparent;
+}
+
+#topbar-cta-button a:hover > span:first-child {
+  border-color: rgb(var(--gray-700));
+  opacity: 1;
+}
+
+#topbar-cta-button a .text-white,
+#topbar-cta-button a svg {
+  color: rgb(var(--gray-800));
+}
+
+html.dark #topbar-cta-button a > span:first-child {
+  border-color: rgb(var(--gray-800));
+}
+
+html.dark #topbar-cta-button a:hover > span:first-child {
+  border-color: rgb(var(--gray-400));
+}
+
+html.dark #topbar-cta-button a .text-white,
+html.dark #topbar-cta-button a svg {
+  color: rgb(var(--gray-200));
+}
