@@ -253,3 +253,13 @@ div:has(> nav #topbar-cta-button) > * {
 div:has(> nav #topbar-cta-button) > :not(nav) {
   order: -1;
 }
+
+/*
+ * O link "Dashboard" no topo da barra lateral (anchor global do docs.json) serve ao celular, onde a
+ * barra lateral é a gaveta de navegação. No desktop, o botão da barra de cima já leva ao Dashboard.
+ */
+@media (min-width: 1024px) {
+  #navigation-items li:has(> a.nav-anchor[href="https://dashboard.lpdata.io"]) {
+    display: none;
+  }
+}

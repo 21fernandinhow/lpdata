@@ -26,6 +26,15 @@
     }
   },
   "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Dashboard",
+          "icon": "table-cells-large",
+          "href": "https://dashboard.lpdata.io"
+        }
+      ]
+    },
     "languages": [
       {
         "language": "pt-BR",
