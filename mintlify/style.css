@@ -192,8 +192,14 @@ html:not(.dark) .prose :where(hr, thead, tbody tr, blockquote) {
 /*
  * Botão "Dashboard" da barra de cima: sem fundo e sem contorno, com um fundo leve no hover.
  * O Mintlify desenha o fundo num span absoluto, o texto em branco e uma seta lateral; a seta dá
- * lugar ao ícone de abrir em nova aba, o mesmo do dashboard, desenhado por máscara na cor do texto.
+ * lugar a um ícone de painel antes da palavra, desenhado por máscara na cor do texto.
  */
+/* Com o ícone à esquerda, o espaço maior passa para o lado do texto. */
+#topbar-cta-button a {
+  padding-right: 0.75rem;
+  padding-left: 0.625rem;
+}
+
 #topbar-cta-button a > span:first-child {
   background: transparent;
 }
@@ -211,13 +217,13 @@ html:not(.dark) .prose :where(hr, thead, tbody tr, blockquote) {
   display: none;
 }
 
-#topbar-cta-button a > div::after {
+#topbar-cta-button a > div::before {
   width: 0.875rem;
   height: 0.875rem;
-  margin-left: 0.125rem;
+  margin-right: 0.125rem;
   background-color: rgb(var(--gray-800));
   content: "";
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M10.25 2.75H15.25V7.75'/%3E%3Cpath d='M15.25 2.75L8.5 9.5'/%3E%3Cpath d='M13.25 10.75V14C13.25 14.69 12.69 15.25 12 15.25H4C3.31 15.25 2.75 14.69 2.75 14V6C2.75 5.31 3.31 4.75 4 4.75H7.25'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 18 18' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2.75' y='2.75' width='5' height='6.5' rx='1'/%3E%3Crect x='10.25' y='2.75' width='5' height='3.5' rx='1'/%3E%3Crect x='10.25' y='8.75' width='5' height='6.5' rx='1'/%3E%3Crect x='2.75' y='11.75' width='5' height='3.5' rx='1'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 html.dark #topbar-cta-button a:hover > span:first-child {
@@ -228,7 +234,7 @@ html.dark #topbar-cta-button a .text-white {
   color: rgb(var(--gray-200));
 }
 
-html.dark #topbar-cta-button a > div::after {
+html.dark #topbar-cta-button a > div::before {
   background-color: rgb(var(--gray-200));
 }
 
