@@ -12,7 +12,7 @@ Abra uma Landing Page e clique na aba **Conteúdo**. Acima do conteúdo, os bot�
 - **Formulário**: campos para preencher, como num cadastro. É o jeito mais fácil.
 - **JSON**: o conteúdo em formato de código, para quem programa.
 
-Os dois mostram o mesmo conteúdo. Você pode trocar de um para o outro a qualquer momento, e o que você ainda não salvou continua lá. A página abre no Formulário. Uma Landing Page ainda vazia abre no JSON.
+Os dois mostram o mesmo conteúdo. Você pode trocar de um para o outro a qualquer momento, e o que você ainda não salvou continua lá. A página abre no Formulário.
 
 ## Salvar
 

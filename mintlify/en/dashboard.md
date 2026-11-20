@@ -12,7 +12,7 @@ Open a Landing Page and click the **Conteúdo** (Content) tab. Above the content
 - **Form**: fields to fill in, like a sign-up form. It is the easiest way.
 - **JSON**: the content as code, for people who program.
 
-Both show the same content. You can switch between them at any time, and anything you have not saved stays there. The page opens in the Form. A Landing Page that is still empty opens in the JSON.
+Both show the same content. You can switch between them at any time, and anything you have not saved stays there. The page opens in the Form.
 
 ## Save
 
