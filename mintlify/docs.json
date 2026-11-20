@@ -42,6 +42,7 @@
             "group": "Gerenciar conteúdo",
             "pages": [
               "landing-pages",
+              "dashboard",
               "assets"
             ]
           },
@@ -80,6 +81,7 @@
             "group": "Manage content",
             "pages": [
               "en/landing-pages",
+              "en/dashboard",
               "en/assets"
             ]
           },
