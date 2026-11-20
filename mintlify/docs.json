@@ -18,6 +18,13 @@
       "dark": "#1c1e23"
     }
   },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Dashboard",
+      "href": "https://dashboard.lpdata.io"
+    }
+  },
   "navigation": {
     "languages": [
       {
