@@ -30,7 +30,7 @@
       "anchors": [
         {
           "anchor": "Dashboard",
-          "icon": "table-cells-large",
+          "icon": "arrow-up-right-from-square",
           "href": "https://dashboard.lpdata.io"
         }
       ]
